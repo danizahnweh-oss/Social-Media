@@ -145,6 +145,7 @@
     });
 
     const submit = button("primary-button", "CREATE AGENT");
+    submit.type = "submit";
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       if (nameInput.value.trim().length < 3) {
