@@ -193,14 +193,19 @@ input:focus-visible,
 }
 
 .hero {
-  width: min(1120px, 100%);
+  width: min(1280px, 100%);
   align-self: center;
   justify-self: center;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
+  grid-template-columns: minmax(360px, 0.86fr) minmax(440px, 1.14fr);
   gap: 48px;
   align-items: center;
   padding: 48px 0;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1,
@@ -214,7 +219,7 @@ input:focus-visible,
 
 .hero h1 {
   max-width: 720px;
-  font-size: clamp(3rem, 8vw, 5.8rem);
+  font-size: clamp(2.8rem, 6.4vw, 5.4rem);
   letter-spacing: -0.025em;
 }
 
@@ -223,6 +228,33 @@ input:focus-visible,
   color: var(--muted);
   font-size: 1.2rem;
   line-height: 1.55;
+}
+
+.story-briefing {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.story-beat {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid rgba(0, 245, 212, 0.16);
+  border-radius: var(--radius-sm);
+  background: rgba(18, 24, 38, 0.58);
+}
+
+.story-beat strong {
+  color: var(--cyan);
+  font-family: var(--mono);
+}
+
+.story-beat span {
+  color: var(--text);
+  line-height: 1.45;
 }
 
 .hero-actions,
@@ -250,33 +282,61 @@ input:focus-visible,
 
 .signal-card {
   position: relative;
-  min-height: 440px;
-  padding: 24px;
+  min-height: 540px;
+  padding: 0;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .signal-card::before {
   content: "";
   position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(255, 46, 151, 0.22);
-  border-radius: var(--radius-sm);
+  inset: 0;
+  z-index: 1;
+  border: 1px solid rgba(255, 46, 151, 0.28);
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, rgba(10, 14, 20, 0.42), rgba(10, 14, 20, 0.02) 48%, rgba(255, 46, 151, 0.08));
+  pointer-events: none;
 }
 
 .signal-card img {
+  display: block;
   width: 100%;
-  position: relative;
-  z-index: 1;
+  height: 100%;
+  min-height: 540px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.briefing-overlay {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid rgba(0, 245, 212, 0.22);
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(6, 10, 16, 0.76);
+}
+
+.briefing-overlay strong {
+  font-family: var(--mono);
+  color: var(--text);
 }
 
 .scanner-bars {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 2;
+  width: min(320px, calc(100% - 40px));
   display: grid;
   gap: 12px;
-  margin-top: 28px;
 }
 
 .scanner-bars span {
@@ -766,6 +826,32 @@ input:focus-visible,
   gap: 10px;
 }
 
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 24;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(3, 6, 10, 0.72);
+}
+
+.modal {
+  width: min(560px, 100%);
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(18, 24, 38, 0.98), rgba(8, 12, 18, 0.98));
+}
+
+.modal .mission-title {
+  margin: 12px 0;
+  font-size: 2rem;
+}
+
+.modal .action-row {
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
 .toast {
   width: min(360px, calc(100vw - 40px));
   padding: 14px 16px;
@@ -821,6 +907,30 @@ input:focus-visible,
 
   .avatar-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .story-beat {
+    grid-template-columns: 1fr;
+  }
+
+  .briefing-overlay {
+    position: static;
+    margin: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .signal-card,
+  .signal-card img {
+    min-height: 360px;
+  }
+
+  .modal .action-row {
+    align-items: stretch;
+  }
+
+  .modal .action-row button {
+    width: 100%;
   }
 }
 

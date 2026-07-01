@@ -35,6 +35,40 @@
     window.setTimeout(() => node.remove(), 4200);
   }
 
+  function showConfirm(options) {
+    const overlay = el("div", "modal-backdrop");
+    const dialog = el("section", "modal");
+    dialog.setAttribute("role", "dialog");
+    dialog.setAttribute("aria-modal", "true");
+    dialog.setAttribute("aria-labelledby", "modal-title");
+    dialog.append(el("span", "mission-chip", options.kicker || "Resistance prompt"));
+    const title = el("h2", "mission-title", options.title || "Confirm action");
+    title.id = "modal-title";
+    dialog.append(title, el("p", "prompt", options.message));
+    const row = el("div", "action-row");
+    const cancel = button("secondary-button", options.cancelLabel || "CANCEL", close);
+    const confirm = button("primary-button", options.confirmLabel || "CONFIRM", () => {
+      close();
+      options.onConfirm();
+    });
+    row.append(cancel, confirm);
+    dialog.append(row);
+    overlay.append(dialog);
+    document.body.append(overlay);
+    confirm.focus();
+
+    function onKey(event) {
+      if (event.key === "Escape") close();
+    }
+
+    function close() {
+      document.removeEventListener("keydown", onKey);
+      overlay.remove();
+    }
+
+    document.addEventListener("keydown", onKey);
+  }
+
   function clear() {
     app.innerHTML = "";
   }
@@ -55,12 +89,25 @@
     top.append(el("span", "brand-chip", "PULSE Resistance"), soundButton());
 
     const hero = el("section", "hero");
-    const copy = el("div");
+    const copy = el("div", "hero-copy");
     copy.append(
-      el("span", "mission-chip", "Resistance backchannel"),
-      el("h1", "", "See through the feed."),
-      el("p", "", "ALGO is shaping what people believe. Build your agent profile, enter the mission hub, and expose the signals hidden inside PULSE.")
+      el("span", "mission-chip", "Incoming Resistance signal"),
+      el("h1", "", "ALGO has chosen your feed."),
+      el("p", "", "PULSE looks like an ordinary social network. It is not. Its algorithm has learned how to push fear, anger and fake proof until people stop checking what is real.")
     );
+
+    const story = el("section", "story-briefing");
+    story.setAttribute("aria-label", "Mission briefing");
+    [
+      ["Your role", "You are a student pulled into the Resistance after your feed shows a hidden anomaly."],
+      ["Your mission", "Create an agent profile, enter the Backchannel, and expose ALGO across ten missions."],
+      ["Your target", "Fake news, deepfakes, echo chambers, influencer pressure, privacy traps and the Core itself."]
+    ].forEach(([label, text]) => {
+      const item = el("article", "story-beat");
+      item.append(el("strong", "", label), el("span", "", text));
+      story.append(item);
+    });
+
     const actions = el("div", "hero-actions");
     actions.append(
       button("primary-button", GameEngine.state.agent ? "RESUME MISSION" : "ENTER THE FEED", () => {
@@ -69,25 +116,34 @@
         else renderLogin();
       }),
       button("secondary-button", "RESET SAVE", () => {
-        if (confirm("Reset this local save and start again?")) {
-          GameEngine.reset();
-          renderLanding();
-        }
+        showConfirm({
+          kicker: "Local save",
+          title: "Reset agent data?",
+          message: "This clears the current codename, points and mission progress stored in this browser.",
+          confirmLabel: "RESET SAVE",
+          cancelLabel: "KEEP PLAYING",
+          onConfirm: () => {
+            GameEngine.reset();
+            renderLanding();
+          }
+        });
       })
     );
-    copy.append(actions);
+    copy.append(story, actions);
 
     const visual = el("div", "signal-card");
     const img = el("img");
-    img.src = "assets/img/logo.svg";
-    img.alt = "PULSE Resistance signal logo";
+    img.src = "assets/img/story-briefing.png";
+    img.alt = "A student receives a secret Resistance signal while social media posts fracture into neon data lines.";
     const bars = el("div", "scanner-bars");
     bars.append(el("span"), el("span"), el("span"));
-    visual.append(img, bars);
+    const overlay = el("div", "briefing-overlay");
+    overlay.append(el("span", "status-pill", "Mission channel open"), el("strong", "", "See through the feed."));
+    visual.append(img, overlay, bars);
     hero.append(copy, visual);
 
     const foot = el("footer", "landing-foot");
-    foot.append(el("span", "muted", "A Resistance training simulation"), el("span", "muted", "English B2"));
+    foot.append(el("span", "muted", "A Resistance training simulation"), el("span", "muted", "English B2, media literacy mission"));
     page.append(top, hero, foot);
     app.append(page);
   }
@@ -270,13 +326,18 @@
   function renderMissionPreview(mission) {
     const stats = GameEngine.state.completed[mission.id];
     const lines = [
-      `${mission.title}`,
-      `Location: ${mission.location}`,
-      `${mission.puzzles.length} puzzles`,
-      stats ? `Completed: ${stats.points} pts` : "Status: ready"
+      `Location: ${mission.location}.`,
+      `${mission.puzzles.length} puzzles waiting in this signal path.`,
+      stats ? `Previous run: ${stats.points} pts.` : "Status: ready."
     ];
-    const start = confirm(`${lines.join("\n")}\n\nStart this mission?`);
-    if (start) renderShell("mission", { missionId: mission.id });
+    showConfirm({
+      kicker: `Mission ${String(mission.order).padStart(2, "0")}`,
+      title: mission.title,
+      message: lines.join(" "),
+      confirmLabel: "START MISSION",
+      cancelLabel: "STAY IN HUB",
+      onConfirm: () => renderShell("mission", { missionId: mission.id })
+    });
   }
 
   function renderMission(main, data) {
@@ -356,11 +417,19 @@
           return;
         }
         const info = GameEngine.revealHint(puzzle, session.hintsUsed);
-        if (!confirm(`Reveal hint ${session.hintsUsed + 1} of ${puzzle.hints.length} (-${info.cost} pts)?`)) return;
-        session.hintsUsed += 1;
-        hintBox.textContent = info.text;
-        play("hint");
-        if (session.hintsUsed >= puzzle.hints.length) hint.disabled = true;
+        showConfirm({
+          kicker: "Hint channel",
+          title: `Reveal hint ${session.hintsUsed + 1} of ${puzzle.hints.length}?`,
+          message: `This hint costs ${info.cost} points for this puzzle. Use it if you are stuck, but clean solves score higher.`,
+          confirmLabel: "REVEAL HINT",
+          cancelLabel: "KEEP THINKING",
+          onConfirm: () => {
+            session.hintsUsed += 1;
+            hintBox.textContent = info.text;
+            play("hint");
+            if (session.hintsUsed >= puzzle.hints.length) hint.disabled = true;
+          }
+        });
       });
       submit = button("primary-button", "SUBMIT ANSWER", () => {
         if (submit.dataset.ready === "next") {
