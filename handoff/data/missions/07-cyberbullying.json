@@ -1,0 +1,169 @@
+{
+  "id": "cyberbullying",
+  "order": 7,
+  "title": "Cyberbullying",
+  "location": "The Feed",
+  "unlockedBy": "digital-footprint",
+  "intro": {
+    "speaker": "Cipher",
+    "lines": [
+      "Tez flagged this one and he's rattled. A friend of ours, Mia, is getting torn apart in the open on her feed. A mocking post took off, the comments are turning nasty, and ALGO keeps shoving it higher.",
+      "ALGO calls it 'high engagement', like it's just a lively debate. It isn't. Your job: see it clearly and act right, don't join in. Tell bullying from disagreement, back Mia up, save proof and report it."
+    ]
+  },
+  "learningGoals": {
+    "media": "Die Schueler koennen Cyberbullying von normaler Kritik oder Meinungsverschiedenheit unterscheiden und angemessene Handlungsschritte benennen (nicht mitmachen, betroffene Person unterstuetzen, Beweise sichern, melden, Hilfe holen).",
+    "english": "Die Schueler koennen den Ton und die Absicht englischer Kommentare einschaetzen (respectful, sarcastic, aggressive) und selbst kurze unterstuetzende Antworten auf Englisch formulieren."
+  },
+  "puzzles": [
+    {
+      "id": "cyberbullying-p1",
+      "type": "feed-mark",
+      "prompt": "Here's the comment thread under Mia's post. Read for intent, not just polite words. Flag every comment that is mean or bullying, whether it's an open insult or a polite-sounding put-down. Leave fair disagreement and support unflagged.",
+      "points": 200,
+      "instruction": "Flag the comments that attack Mia as a person (bullying). Do NOT flag comments that only disagree with her point or that support her.",
+      "posts": [
+        {
+          "id": "c-fair",
+          "handle": "@jordan_k",
+          "text": "I see it differently, but that's a fair point.",
+          "flag": false
+        },
+        {
+          "id": "c-embarrass",
+          "handle": "@anon_902",
+          "text": "Honestly, nobody wanted to see this. Embarrassing.",
+          "flag": true
+        },
+        {
+          "id": "c-support",
+          "handle": "@bestie_sam",
+          "text": "You've got this, Mia. Ignore the noise.",
+          "flag": false
+        },
+        {
+          "id": "c-polite",
+          "handle": "@calm_takes",
+          "text": "With respect, people like you really shouldn't post at all.",
+          "flag": true
+        },
+        {
+          "id": "c-topic",
+          "handle": "@ravi_p",
+          "text": "I don't agree with your take on the skate park.",
+          "flag": false
+        },
+        {
+          "id": "c-delete",
+          "handle": "@x_troll",
+          "text": "What a joke. Delete your account already.",
+          "flag": true
+        }
+      ],
+      "feedback": {
+        "correct": "Well judged. The polite-sounding 'people like you shouldn't post' is still a personal attack. Disagreement is about the topic; bullying is about the person.",
+        "wrong": "Read for intent. A comment can sound calm and still be an attack. If it targets Mia herself rather than her point, flag it as bullying."
+      },
+      "hints": [
+        "Read for intent, not just for polite words. A comment can sound calm and still be an attack.",
+        "Disagreement argues with the idea (the skate park). Bullying goes after the person. Support lifts her up.",
+        "Flag 'nobody wanted to see this', the polite 'people like you shouldn't post', and 'delete your account'. Leave the two disagreements and the support alone."
+      ]
+    },
+    {
+      "id": "cyberbullying-p2",
+      "type": "chat-sim",
+      "prompt": "Mia has messaged you privately. She's upset and blames herself. Read the chat, then choose the most helpful first thing to send her.",
+      "points": 150,
+      "frame": "assets/img/puzzle/chat-frame.svg",
+      "script": [
+        {
+          "from": "Mia",
+          "text": "Have you seen the comments? Everyone's laughing at me."
+        },
+        {
+          "from": "Mia",
+          "text": "Maybe I shouldn't have posted at all. This is my own fault."
+        },
+        {
+          "from": "ALGO",
+          "text": "It really is a very lively thread. Perhaps best to just let it run its course."
+        }
+      ],
+      "decision": {
+        "prompt": "Which reply should you send Mia first?",
+        "options": [
+          "Just ignore them, it's not a big deal.",
+          "That's not okay, and it's not your fault. Do you want me to help you report it?",
+          "You should fire back at them, give them a taste of it.",
+          "Maybe don't post stuff like that next time."
+        ],
+        "correctIndex": 1
+      },
+      "feedback": {
+        "correct": "That's the one. It believes her, removes the blame and offers concrete help, without telling her to fight back.",
+        "wrong": "Not that one. The best reply believes Mia, tells her it isn't her fault, and offers real help, rather than dismissing her, blaming her or urging revenge."
+      },
+      "hints": [
+        "A good reply makes Mia feel believed and less alone. It never tells her to hit back.",
+        "Rule out anything that dismisses her ('not a big deal'), blames her ('don't post that') or calls for revenge ('fire back').",
+        "Choose 'That's not okay, and it's not your fault. Do you want me to help you report it?' It supports her and offers real help."
+      ]
+    },
+    {
+      "id": "cyberbullying-p3",
+      "type": "multi-select",
+      "prompt": "Before you report, get your response right. Select every action that is a sensible, safe way to handle this pile-on. Leave out anything that makes it worse.",
+      "points": 150,
+      "options": [
+        "Stay calm and don't reply in anger.",
+        "Take screenshots as evidence before anything is deleted.",
+        "Report the posts to the platform.",
+        "Tell a trusted adult what's happening.",
+        "Post an insult back to defend Mia.",
+        "Share the mocking post so more people see how bad it is."
+      ],
+      "correctIndices": [0, 1, 2, 3],
+      "feedback": {
+        "correct": "Exactly. Stay calm, save proof, report and tell an adult. Firing back or resharing the post only feeds the pile-on and spreads it further.",
+        "wrong": "Two of those backfire. Insulting the bullies and resharing the post just spread the cruelty. Pick the calm, evidence-first, report-and-tell-an-adult actions."
+      },
+      "hints": [
+        "A good response protects Mia and the evidence. It never adds more cruelty to the feed.",
+        "Two options make things worse: hitting back and resharing the post. Skip those.",
+        "Select: stay calm, take screenshots, report the posts, tell a trusted adult. Leave out the insult and the reshare."
+      ]
+    },
+    {
+      "id": "cyberbullying-p4",
+      "type": "order",
+      "prompt": "Now put the right steps into a sensible order, from the very first thing you should do to the last.",
+      "points": 100,
+      "items": [
+        "Report the posts.",
+        "Stay calm, don't reply in anger.",
+        "Tell a trusted adult.",
+        "Take screenshots as evidence.",
+        "Check in on Mia."
+      ],
+      "correctOrder": [1, 3, 0, 2, 4],
+      "feedback": {
+        "correct": "That's the order: cool down, save proof, report, tell an adult, and look after Mia. Evidence before you report, always.",
+        "wrong": "Reorder it. Calm first, then save the evidence before it vanishes, then report, then tell an adult, then check on Mia."
+      },
+      "hints": [
+        "Before you reply anywhere, protect the evidence. What should you save first?",
+        "You can't report well without proof, so screenshots come before reporting. And staying calm comes before everything.",
+        "Order: stay calm, take screenshots, report the posts, tell a trusted adult, check in on Mia."
+      ]
+    }
+  ],
+  "outro": {
+    "speaker": "Cipher",
+    "lines": [
+      "Don't feed it. You saved the proof, reported it and messaged Mia, exactly right. She needed a friend more than a comeback.",
+      "And you saw ALGO's game: it boosted the pile-on because fights keep people scrolling. Naming that is half the defence."
+    ]
+  },
+  "achievementHooks": ["no-hint-run", "perfect-mission"]
+}

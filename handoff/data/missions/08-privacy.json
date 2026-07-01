@@ -1,0 +1,113 @@
+{
+  "id": "privacy",
+  "order": 8,
+  "title": "Privacy",
+  "location": "The Feed",
+  "unlockedBy": "cyberbullying",
+  "intro": {
+    "speaker": "Cipher",
+    "lines": [
+      "I'm sending you deep into the PULSE settings, where ALGO keeps the rules deliberately confusing. A shiny new feature called PULSE Connect promises an easier login and 'a more personal experience'.",
+      "The catch is buried in the consent screen: a pre-ticked box, wording built to confuse you, and a bright 'Accept all' button next to a grey, hidden 'Manage settings'. These are dark patterns. Read the small print for one thing only: who gets your data, and whether you can say no."
+    ]
+  },
+  "learningGoals": {
+    "media": "Die Schüler können manipulative Gestaltungstricks in Einwilligungsdialogen ('dark patterns', Voreinstellungen, irreführende Buttons) erkennen und Privatsphäre-Einstellungen bewusst und datensparsam wählen.",
+    "english": "Die Schüler können englische Nutzungsbedingungen und Datenschutztexte im Detail verstehen, wichtige Klauseln herausfiltern und Fachvokabular (consent, permission, third party, opt out, data sharing) korrekt zuordnen."
+  },
+  "puzzles": [
+    {
+      "id": "privacy-p1",
+      "type": "hotspot",
+      "prompt": "Here is the PULSE Connect consent screen. It shows an already-ticked consent box near the top left, a huge glowing green 'Accept all' button in the centre, a tiny grey 'Manage settings' link tucked in the bottom corner, a bold red fear line reading 'You may miss out on friends', and a plain, honest link to the privacy policy. Tap every dark pattern ALGO is using to steer you towards 'Accept all'. Leave the honest privacy-policy link alone.",
+      "image": "assets/img/puzzle/consent-screen.svg",
+      "regions": [
+        { "id": "preticked", "label": "Pre-ticked consent box", "x": 20, "y": 24, "w": 120, "h": 34, "correct": true },
+        { "id": "acceptall", "label": "Glowing 'Accept all' button", "x": 90, "y": 96, "w": 120, "h": 40, "correct": true },
+        { "id": "manage", "label": "Grey hidden 'Manage settings' link", "x": 210, "y": 176, "w": 84, "h": 24, "correct": true },
+        { "id": "fear", "label": "Fear line 'You may miss out on friends'", "x": 20, "y": 150, "w": 170, "h": 24, "correct": true },
+        { "id": "policy", "label": "Plain privacy-policy link", "x": 20, "y": 190, "w": 110, "h": 20, "correct": false }
+      ],
+      "requiredCorrect": 4,
+      "points": 100,
+      "feedback": {
+        "correct": "Spotted. Every trick pulls you toward 'Accept all' without thinking. The plain privacy-policy link is the only honest thing on the screen.",
+        "wrong": "Look again. Anything that nudges, hides or frightens is a dark pattern. A plain, neutral link is not."
+      },
+      "hints": [
+        "The easy, colourful button is the one ALGO wants you to press. Look for the quiet options around it.",
+        "Dark patterns nudge, hide or frighten. A box already ticked for you, a link made hard to see, and a warning that you'll 'miss out' are all tricks.",
+        "Tap the pre-ticked box, the glowing 'Accept all' button, the grey 'Manage settings' link and the 'You may miss out' fear line. Leave the plain privacy-policy link untapped."
+      ]
+    },
+    {
+      "id": "privacy-p2",
+      "type": "multiple-choice",
+      "prompt": "Read this extract from the PULSE Connect terms: 'By continuing, you allow PULSE and its third-party partners to access and share your location and contacts. You may opt out of this sharing at any time through Manage settings.' Which statement is correct?",
+      "points": 100,
+      "options": [
+        "Only PULSE itself sees your location and contacts, and sharing cannot be stopped.",
+        "Location and contacts go to third-party partners, but you can opt out through Manage settings.",
+        "Nothing is shared with anyone unless you press 'Accept all'.",
+        "Your data is shared and there is no way to say no."
+      ],
+      "correctIndex": 1,
+      "feedback": {
+        "correct": "Exactly. Your location and contacts reach third-party partners, but you can opt out, just not through the button ALGO wants you to press.",
+        "wrong": "Read the clause once more. It names third-party partners and it names a way to opt out."
+      },
+      "hints": [
+        "Read the terms for one thing only: who gets your data, and whether you can say no.",
+        "The phrase 'third-party partners' tells you the data leaves PULSE. The phrase 'opt out' tells you refusal is possible.",
+        "The correct answer is that location and contacts go to third-party partners, and you can opt out, but only through 'Manage settings', not 'Accept all'."
+      ]
+    },
+    {
+      "id": "privacy-p3",
+      "type": "multi-select",
+      "prompt": "This is the PULSE permission panel. A well-behaved app should ask only for what a feature genuinely needs. Select every permission you should DENY because the app does not truly need it to work.",
+      "points": 150,
+      "options": [
+        "Constant microphone access in the background",
+        "Uploading your whole contacts list",
+        "Advertising tracking across other apps",
+        "Photos, only when you actively upload one",
+        "Location, only while using the app"
+      ],
+      "correctIndices": [0, 1, 2],
+      "feedback": {
+        "correct": "That's data-sparing done right. Deny constant microphone, the contacts upload and ad-tracking. Allow photos on active upload and location only while using.",
+        "wrong": "Ask of each switch: does the app truly need this to work? If not, deny it. Photos-on-upload and location-while-using are fine."
+      },
+      "hints": [
+        "Grant a permission only if the feature would break without it.",
+        "An app does not need your microphone running all the time, your entire contact list, or ad-tracking just to let you post.",
+        "Deny the constant microphone, the contacts-list upload and the ad-tracking. Leave photos-on-upload and location-while-using allowed."
+      ]
+    },
+    {
+      "id": "privacy-p4",
+      "type": "text-input",
+      "prompt": "Final code system. You denied exactly three switches (microphone, contacts, ad-tracking), and the terms told you refusal is possible using a two-word phrase. Combine the number of switches you set to 'deny' with that key phrase from the terms. Type the release code in the form DENY-<number>-<PHRASE>.",
+      "points": 150,
+      "acceptedAnswers": ["deny-3-optout", "deny-3-opt out", "deny-3-opt-out"],
+      "feedback": {
+        "correct": "Code accepted. Three switches denied, and you can 'opt out'. The mission closes on your terms, not ALGO's.",
+        "wrong": "Count your denied switches, then add the two-word phrase from the terms that means 'say no'."
+      },
+      "hints": [
+        "The code starts with DENY, then a number, then a keyword from the terms.",
+        "You denied three permissions. The terms said you 'may ... at any time' do one particular thing to refuse.",
+        "The code is DENY-3-OPTOUT: three switches on deny plus the phrase 'opt out'."
+      ]
+    }
+  ],
+  "outro": {
+    "speaker": "Cipher",
+    "lines": [
+      "'Easy' was the trap. He pre-ticks the boxes so you agree without noticing.",
+      "You don't have to hide from everything, just choose on purpose. Deny what the app doesn't actually need. Nicely done, Agent."
+    ]
+  },
+  "achievementHooks": ["no-hint-run", "perfect-mission"]
+}

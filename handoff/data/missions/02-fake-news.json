@@ -1,0 +1,114 @@
+{
+  "id": "fake-news",
+  "order": 2,
+  "title": "Fake News",
+  "location": "The Feed",
+  "unlockedBy": "algorithm",
+  "intro": {
+    "speaker": "Cipher",
+    "lines": [
+      "Back so soon? Good, because we've got a live one. A headline just exploded across thousands of feeds in a couple of hours.",
+      "I reckon ALGO is pushing it hard precisely because it winds people up. Your job: find out whether the story is actually real before more people share it.",
+      "Heads up - ALGO will lean in all friendly and nudge you to just believe it. Don't. Check the source first."
+    ]
+  },
+  "learningGoals": {
+    "media": "Die Schueler koennen typische Merkmale von Fake News erkennen und pruefen (fehlende oder unserioese Quelle, reisserische Ueberschrift, emotionale Sprache, fehlendes Datum, kein Gegen-Check bei anderen Medien).",
+    "english": "Die Schueler koennen Nachrichtentexte auf B2-Niveau kritisch lesen, zwischen Fakt und Meinung unterscheiden und Vokabular zur Quellenpruefung anwenden (source, headline, claim, evidence, to verify, reliable)."
+  },
+  "puzzles": [
+    {
+      "id": "fake-news-p1",
+      "type": "feed-mark",
+      "prompt": "The viral story has been reshared across the feed. Tap every version that shows a warning sign of fake news. Some reshares are calm and checkable - leave those alone.",
+      "points": 150,
+      "instruction": "Mark all the posts that carry a fake-news red flag (no source, no date, all-caps panic).",
+      "posts": [
+        { "id": "f1", "handle": "@truthblastdaily", "text": "BREAKING!!! TOWN WATER IS POISONED - SHARE BEFORE THEY DELETE THIS!!!", "flag": true },
+        { "id": "f2", "handle": "@newsagency_uk", "text": "Council confirms routine pipe maintenance on Mill Lane, 1 July 2026. Water is safe.", "flag": false },
+        { "id": "f3", "handle": "@panic_pete", "text": "My cousin says the water thing is TRUE. No source but trust me, it's happening.", "flag": true },
+        { "id": "f4", "handle": "@anon_repost", "text": "Scary headline going round. No author, no date, no idea where it started.", "flag": true },
+        { "id": "f5", "handle": "@localreporter", "text": "I called the water company today (1 July). They deny any contamination. Story checks out as false.", "flag": false }
+      ],
+      "feedback": {
+        "correct": "Good detective work. The screaming all-caps post, the 'trust me' with no source, and the dateless anonymous repost are the fakes. The named, dated, checkable reports are fine.",
+        "wrong": "Look closer. A calm post that names a source and a date isn't the problem. Flag the all-caps panic, the 'no source but trust me', and the anonymous dateless repost."
+      },
+      "hints": [
+        "Before you believe a post, ask a simple question: who actually said this, and when?",
+        "Real news names a source you can check and gives a date. Fake news shouts in capitals and skips both.",
+        "Flag the all-caps 'SHARE BEFORE THEY DELETE THIS', the 'no source but trust me', and the dateless anonymous repost. Leave the two named, dated reports."
+      ]
+    },
+    {
+      "id": "fake-news-p2",
+      "type": "hotspot",
+      "prompt": "You zoom into the dramatic crowd photo attached to the story. It looks real - and it is - but a detail in the background gives it away. Click on the suspicious spot that proves this genuine photo is being recycled from an old, unrelated event. (Look for a poster in the background that shows an old year, '2016'.)",
+      "points": 150,
+      "image": "assets/img/puzzle/photo-altered.svg",
+      "regions": [
+        { "id": "poster-year", "label": "Poster reading '2016'", "x": 30, "y": 20, "w": 70, "h": 45, "correct": true },
+        { "id": "crowd", "label": "The crowd itself", "x": 90, "y": 120, "w": 120, "h": 80, "correct": false },
+        { "id": "sky", "label": "Cloudy sky", "x": 180, "y": 10, "w": 100, "h": 50, "correct": false },
+        { "id": "banner", "label": "Blank banner on the right", "x": 210, "y": 70, "w": 70, "h": 40, "correct": false }
+      ],
+      "requiredCorrect": 1,
+      "feedback": {
+        "correct": "Exactly. The poster reads '2016'. The photo is real but recycled - taken out of context and glued to a brand-new headline. That year on the poster blew its cover.",
+        "wrong": "The crowd and the sky look normal because they are normal - the photo really is real. Look for a date on a poster in the background that proves it's old."
+      },
+      "hints": [
+        "The photo itself isn't faked. So what's wrong with it? Something small in the background dates it.",
+        "Scan the posters and signs behind the crowd, not the crowd itself. Look for a year.",
+        "Click the poster in the top-left that reads '2016' - that proves the photo is old and reused."
+      ]
+    },
+    {
+      "id": "fake-news-p3",
+      "type": "text-input",
+      "prompt": "You've proved the picture is genuine but lifted from another time and stuck onto a new headline. In one word, what has ALGO done to this image? (Type the single word that describes taking something away from its original setting.)",
+      "points": 100,
+      "acceptedAnswers": ["context", "out of context", "recycled", "reused", "old"],
+      "feedback": {
+        "correct": "Exactly. The photo has been taken out of context - genuine, but recycled to fit a lie.",
+        "wrong": "Think about the '2016' on the poster. The picture is genuine but from another time. What word describes stripping an image from its original setting?"
+      },
+      "hints": [
+        "The photo isn't faked. So what's wrong with it? It's been moved away from where it belongs.",
+        "A real, old picture stuck onto a new story is being used out of its original setting.",
+        "The answer describes taking a genuine image away from its original meaning - it's been used out of 'context'."
+      ]
+    },
+    {
+      "id": "fake-news-p4",
+      "type": "order",
+      "prompt": "To unlock the mission code, run the suspicious story through the five-point checklist. Arrange the checks in this fixed order - Source, Date, Emotion, Cross-check, Photo - so the pattern of pass/fail forms the code FAIL - FAIL - FAIL - FAIL - PASS.",
+      "points": 200,
+      "items": [
+        "Source: FAIL (no author, unknown site)",
+        "Date: FAIL (no date given at all)",
+        "Emotion: FAIL (all-caps, exclamation marks, panic language)",
+        "Cross-check: FAIL (no other outlet reports this)",
+        "Photo: PASS (the image is a real photo, only misused)"
+      ],
+      "correctOrder": [0, 1, 2, 3, 4],
+      "feedback": {
+        "correct": "FAIL-FAIL-FAIL-FAIL-PASS. Code accepted. A single story with no checkable source and no confirmation elsewhere must never be treated as true.",
+        "wrong": "Keep the checklist order fixed: Source, Date, Emotion, Cross-check, then Photo. Four fails, one conditional pass."
+      },
+      "hints": [
+        "Run the checklist in the given order and decide pass or fail for each point.",
+        "Only one item is a 'pass' - the photo is a real image (just misused). The other four all fail.",
+        "The order is Source, Date, Emotion, Cross-check, Photo, giving FAIL-FAIL-FAIL-FAIL-PASS."
+      ]
+    }
+  ],
+  "outro": {
+    "speaker": "Cipher",
+    "lines": [
+      "That photo's real - but it's years old. ALGO glued it to a brand-new headline. Classic move. You caught it.",
+      "'Everyone's sharing it' is never the same as 'it's true'. You just proved that. Nice work, Agent."
+    ]
+  },
+  "achievementHooks": ["no-hint-run", "perfect-mission"]
+}

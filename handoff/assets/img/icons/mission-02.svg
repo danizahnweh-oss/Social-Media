@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Fake News icon">
+<rect x="2" y="2" width="60" height="60" rx="12" fill="#0F1520" stroke="#00F5D4" stroke-width="1.5" opacity="0.95"/>
+<rect x="12" y="14" width="40" height="36" rx="3" fill="none" stroke="#00F5D4" stroke-width="3"/><path d="M18 24 h20 M18 32 h28 M18 40 h16" stroke="#00F5D4" stroke-width="3"/><text x="44" y="30" font-family="monospace" font-size="20" fill="#FF3B3B">!</text>
+</svg>

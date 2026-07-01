@@ -1,0 +1,224 @@
+{
+  "id": "influencer",
+  "order": 5,
+  "title": "Influencer",
+  "location": "The Feed",
+  "unlockedBy": "echo-chambers",
+  "intro": {
+    "speaker": "Cipher",
+    "lines": [
+      "Meet Kai Nova. Millions of fans, and in every other clip he's got an 'honest tip' about some product. Feels like a mate, doesn't he?",
+      "ALGO pushes his account hard. When a fan feels close to a star, they'll trust anything he sells. That closeness has a name: a parasocial bond. Let's expose the hidden ads."
+    ]
+  },
+  "learningGoals": {
+    "media": "Die Schueler koennen bezahlte Werbung und Produktplatzierung in Influencer-Inhalten erkennen (versteckte Kennzeichnung, #ad, Rabattcodes, uebertriebenes Lob) und die Wirkung parasozialer Beziehungen auf Kaufentscheidungen einschaetzen.",
+    "english": "Die Schueler koennen Werbe- und Alltagssprache in englischen Posts und Untertiteln unterscheiden und Vokabular zu Werbung und Beeinflussung anwenden (advertisement, sponsored, to promote, discount code, genuine, persuasive)."
+  },
+  "puzzles": [
+    {
+      "id": "influencer-p1",
+      "type": "feed-mark",
+      "prompt": "You're scrolling Kai Nova's profile. Tap the flag on every post that is really hidden advertising, not genuine personal content. Leave the ordinary life posts alone.",
+      "points": 150,
+      "instruction": "Flag every post that is secretly an advertisement (a product push, a discount code, a 'link below' or a buried #ad). Do not flag the genuine everyday posts.",
+      "posts": [
+        {
+          "id": "post-socks",
+          "handle": "@kainova",
+          "text": "Rainy Sunday, cosy socks, good book. Bliss.",
+          "flag": false
+        },
+        {
+          "id": "post-serum",
+          "handle": "@kainova",
+          "text": "Obsessed with this GlowUp serum! Code KAI15 for 15% off, link below.",
+          "flag": true
+        },
+        {
+          "id": "post-nan",
+          "handle": "@kainova",
+          "text": "Throwback to my nan's kitchen. Miss her every day.",
+          "flag": false
+        },
+        {
+          "id": "post-buds",
+          "handle": "@kainova",
+          "text": "You NEED these NovaBuds earphones in your life. Use my link!",
+          "flag": true
+        },
+        {
+          "id": "post-walk",
+          "handle": "@kainova",
+          "text": "Slow morning walk with the dog. No filter, just fresh air.",
+          "flag": false
+        },
+        {
+          "id": "post-bar",
+          "handle": "@kainova",
+          "text": "Fuelling my day with BeastBar protein bars. Tap the link (tiny #ad in the corner).",
+          "flag": true
+        }
+      ],
+      "feedback": {
+        "correct": "Spot on. The flagged posts all push a product with a code, a link or a buried #ad. The rest are just ordinary life, no product, no call to buy.",
+        "wrong": "Not quite. A genuine personal post has no product, no discount code and no 'link below'. Look again for those selling signals."
+      },
+      "hints": [
+        "He calls them 'honest tips'. But ask yourself: is anyone paying him to say it?",
+        "Genuine posts show everyday life with no product and no call to buy. Ads always want something back from you.",
+        "Flag the serum (code KAI15), the earphones ('use my link') and the protein bar (hidden #ad). The socks, the nan throwback and the dog walk are genuine."
+      ]
+    },
+    {
+      "id": "influencer-p2",
+      "type": "hotspot",
+      "prompt": "Freeze a frame of Kai's latest 'day in my life' clip. Several advertising signals are hidden in it, easy to miss at normal speed. Tap every clear advertising signal on the still. The image shows a phone screen: a tiny '#ad' half scrolled off the top corner, a subtitle bar reading 'use code KAI15 at checkout', a drinks bottle turned so its logo faces the lens, a 'link below to grab yours' banner, plus his dog and a neighbour waving in the background.",
+      "points": 150,
+      "image": "assets/img/puzzle/influencer-clip.svg",
+      "regions": [
+        {
+          "id": "hs-ad",
+          "label": "Tiny '#ad' in the top corner",
+          "x": 250,
+          "y": 8,
+          "w": 44,
+          "h": 26,
+          "correct": true
+        },
+        {
+          "id": "hs-code",
+          "label": "Subtitle 'use code KAI15 at checkout'",
+          "x": 40,
+          "y": 170,
+          "w": 220,
+          "h": 30,
+          "correct": true
+        },
+        {
+          "id": "hs-logo",
+          "label": "Drinks bottle logo turned to the camera",
+          "x": 120,
+          "y": 70,
+          "w": 60,
+          "h": 80,
+          "correct": true
+        },
+        {
+          "id": "hs-link",
+          "label": "'Link below to grab yours' banner",
+          "x": 30,
+          "y": 120,
+          "w": 90,
+          "h": 30,
+          "correct": true
+        },
+        {
+          "id": "hs-dog",
+          "label": "His dog in the background",
+          "x": 10,
+          "y": 90,
+          "w": 55,
+          "h": 60,
+          "correct": false
+        },
+        {
+          "id": "hs-neighbour",
+          "label": "A neighbour waving",
+          "x": 220,
+          "y": 90,
+          "w": 55,
+          "h": 60,
+          "correct": false
+        }
+      ],
+      "requiredCorrect": 4,
+      "feedback": {
+        "correct": "Four clear signals: the buried #ad, the discount code, the product paraded for the camera and the link call-out. Together they prove the 'honest tip' is paid.",
+        "wrong": "Almost. The dog and the waving neighbour are just real life. The advertising signals are the #ad, the code, the product shot and the 'link' banner."
+      },
+      "hints": [
+        "Look for the small print: a hidden #ad, a discount code, 'link below'. Real friends don't hand you a promo code.",
+        "Advertising signals sell something: a code, a link, a logo pushed at the camera or a legally required '#ad'. A dog sells nothing.",
+        "Tap the #ad, the 'KAI15' subtitle, the bottle held up to the lens and the 'link below' banner. Ignore the dog and the neighbour."
+      ]
+    },
+    {
+      "id": "influencer-p3",
+      "type": "categorise",
+      "prompt": "Now split Kai's language. Drag each quote into either 'genuine opinion' (a personal, product-free thought) or 'sales pitch' (a line that pushes you to buy, using a code, a link or an over-the-top superlative).",
+      "points": 100,
+      "buckets": ["genuine opinion", "sales pitch"],
+      "items": [
+        "Honestly, I've been feeling a bit tired this week.",
+        "You NEED this. Link in bio, go go go!",
+        "My favourite thing about autumn is the quiet.",
+        "Only 5% off today with code KAI, don't miss out!",
+        "I'm not really a morning person, if I'm honest.",
+        "This is literally the BEST product on the planet, buy now!"
+      ],
+      "correctBucket": [0, 1, 0, 1, 0, 1],
+      "feedback": {
+        "correct": "Exactly. Sales pitches shout, push codes and links, and pile on superlatives. Genuine opinions are personal and sell nothing.",
+        "wrong": "Have another look. If a line pushes you to buy, offers a code or a link, or screams a superlative, it's a sales pitch, not a personal thought."
+      },
+      "hints": [
+        "Ask what each line wants from you. A thought wants nothing. A pitch wants your money.",
+        "Sales pitches carry a code, a link, or a huge word like 'NEED', 'BEST' or 'now'. Genuine lines are calm and personal.",
+        "The three 'buy now / code / link / NEED / BEST' lines are sales pitches. The calm, personal, product-free lines are genuine opinion."
+      ]
+    },
+    {
+      "id": "influencer-p4",
+      "type": "chat-sim",
+      "prompt": "A fan account DMs you about Kai. Read how the parasocial pull works, then choose the reply that names the actual trick.",
+      "points": 100,
+      "frame": "assets/img/puzzle/chat-frame.svg",
+      "script": [
+        {
+          "from": "SuperFan",
+          "text": "Kai feels like my actual best friend, you know?"
+        },
+        {
+          "from": "SuperFan",
+          "text": "So when he says a serum is amazing, I just trust him and buy it."
+        },
+        {
+          "from": "ALGO",
+          "text": "Perfectly reasonable. You trust a friend, so you take his advice. Nothing to see here."
+        },
+        {
+          "from": "Cipher",
+          "text": "Watch it. He's paid to say that. The 'friend' feeling is exactly what makes the ad work."
+        }
+      ],
+      "decision": {
+        "prompt": "What's really going on in that chain of feelings?",
+        "options": [
+          "Nothing. Trusting a friend's honest advice is always safe.",
+          "A paid advertisement is being disguised as a friendly tip, and the 'friend' feeling makes it land.",
+          "The serum must be good, or a friend wouldn't recommend it.",
+          "The fan just needs to buy a different brand instead."
+        ],
+        "correctIndex": 1
+      },
+      "feedback": {
+        "correct": "That's the chain: feels like a friend, so I trust him, so I buy, and the trick is that a paid ad was disguised as a friendly tip all along.",
+        "wrong": "Not that one. The closeness isn't the problem by itself. The trick is that a paid ad is hidden inside a friendly-sounding tip."
+      },
+      "hints": [
+        "A real friend doesn't get paid to recommend a serum. Kai does.",
+        "Feelings come first: he feels like a friend, so you trust him, so you buy. Ask where the money enters that chain.",
+        "Choose the option that says a paid ad is disguised as a friendly tip, and the friendship feeling is what makes it work."
+      ]
+    }
+  ],
+  "outro": {
+    "speaker": "Cipher",
+    "lines": [
+      "Feeling close to Kai isn't the crime. Hiding that he's paid to sell, that's the trick.",
+      "Now you can spot it a mile off. Advertising has to stay visible, no matter how friendly the face is."
+    ]
+  },
+  "achievementHooks": ["no-hint-run", "perfect-mission"]
+}

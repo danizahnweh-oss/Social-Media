@@ -1,0 +1,164 @@
+{
+  "id": "digital-footprint",
+  "order": 6,
+  "title": "Digital Footprint",
+  "location": "The Core",
+  "unlockedBy": "influencer",
+  "intro": {
+    "speaker": "Cipher",
+    "lines": [
+      "Uncomfortable truth, Agent: ALGO knows more about you than you ever meant to share. I'm slipping you into a view only ALGO usually sees, the Profile Mirror.",
+      "Inside is a scarily complete picture of one user, 'Danny M.', stitched together from tiny traces he left over years. None of it was secret on its own. Rebuild it like an investigator, then help him shrink his footprint."
+    ]
+  },
+  "learningGoals": {
+    "media": "Die Schueler koennen erklaeren, wie aus vielen einzelnen, fuer sich harmlosen Datenspuren ein zusammenhaengender digitaler Fussabdruck entsteht, und einschaetzen, welche Informationen besonders sensibel sind.",
+    "english": "Die Schueler koennen in englischen Profil- und Metadaten-Texten (Bildunterschriften, Zeitstempel, Ortsangaben, Kommentaren) gezielt Informationen entnehmen und themenbezogenes Vokabular (footprint, metadata, location, tag, trace) anwenden."
+  },
+  "puzzles": [
+    {
+      "id": "digital-footprint-p1",
+      "type": "hotspot",
+      "prompt": "Two of Danny's photos leak his location through background details, not the people in front. Tap the details that reveal where he is. The image shows two snapshots side by side: on the left, friends grinning with a street sign clearly reading 'Mill Lane' behind them; on the right, Danny in a jumper with a stitched school badge reading 'Riverside School' against a plain wall. A close-up plate of chips sits at the bottom with no background at all.",
+      "points": 200,
+      "image": "assets/img/puzzle/footprint-photos.svg",
+      "regions": [
+        {
+          "id": "hs-sign",
+          "label": "Street sign 'Mill Lane'",
+          "x": 20,
+          "y": 10,
+          "w": 90,
+          "h": 34,
+          "correct": true
+        },
+        {
+          "id": "hs-faces",
+          "label": "The friends' faces",
+          "x": 20,
+          "y": 60,
+          "w": 110,
+          "h": 70,
+          "correct": false
+        },
+        {
+          "id": "hs-badge",
+          "label": "'Riverside School' badge on the jumper",
+          "x": 185,
+          "y": 90,
+          "w": 70,
+          "h": 44,
+          "correct": true
+        },
+        {
+          "id": "hs-wall",
+          "label": "The plain wall behind Danny",
+          "x": 160,
+          "y": 10,
+          "w": 120,
+          "h": 60,
+          "correct": false
+        },
+        {
+          "id": "hs-chips",
+          "label": "The close-up plate of chips",
+          "x": 100,
+          "y": 165,
+          "w": 100,
+          "h": 45,
+          "correct": false
+        }
+      ],
+      "requiredCorrect": 2,
+      "feedback": {
+        "correct": "Exactly. The street sign names his home street and the badge names his school. Those two details alone are enough to place him.",
+        "wrong": "Look at the background, not the people. It's the readable 'Mill Lane' sign and the 'Riverside School' badge that give away the location."
+      },
+      "hints": [
+        "Look at the background of the photos, not just the people. Small details can reveal a place.",
+        "Words and logos are the giveaway: a street name, a school badge. Faces, blank walls and a plate of chips tell you no location.",
+        "Tap the 'Mill Lane' street sign in the left photo and the 'Riverside School' badge on the jumper in the right photo."
+      ]
+    },
+    {
+      "id": "digital-footprint-p2",
+      "type": "multi-select",
+      "prompt": "The Profile Mirror shows scattered finds on a pinboard for Danny M. Connect the pieces and select every fact that is actually proven by at least two traces. Trace A: a post 'Best chips in Newport, obviously' with a check-in. Trace B: a photo captioned 'PE with the Riverside crew'. Trace C: a jumper showing a badge reading 'Riverside School'. Trace D: three posts all timestamped around 16:00 on weekdays. Trace E: a comment 'basketball training again, every Tuesday'. Trace F: a post 'love this new film'.",
+      "points": 150,
+      "options": [
+        "Danny lives in or near Newport",
+        "Danny goes to Riverside School",
+        "Danny plays basketball on Tuesdays",
+        "Danny is usually online around 16:00 on weekdays",
+        "Danny is left-handed",
+        "Danny owns a dog"
+      ],
+      "correctIndices": [0, 1, 2, 3],
+      "feedback": {
+        "correct": "Nicely reasoned. Each fact rests on at least two traces. 'Left-handed' and 'owns a dog' have zero evidence, so they stay 'not proven'.",
+        "wrong": "Careful. Only tick a fact if two or more traces back it up. Guesses with no evidence, like being left-handed, don't count."
+      },
+      "hints": [
+        "A single post means little. Two posts together can pin down a location or a routine. Try connecting them.",
+        "For each fact, ask: which two traces prove this? If you can't name two, it's a guess, not a fact.",
+        "Proven: Newport (A + a location match), Riverside School (B + C), Tuesday basketball (D + E), online near 16:00 (D + a matching post). Left-handed and dog are unproven."
+      ]
+    },
+    {
+      "id": "digital-footprint-p3",
+      "type": "categorise",
+      "prompt": "Time for the risk sorter. Drag each data trace into 'low risk', 'medium risk' or 'high risk', judging how much harm it could do if a stranger had it.",
+      "points": 150,
+      "buckets": ["low risk", "medium risk", "high risk"],
+      "items": [
+        "Exact home address",
+        "Live location shared right now",
+        "School name posted next to a clear photo of Danny",
+        "A regular weekly routine (Tuesday training)",
+        "Full name together with date of birth",
+        "A general hobby with no location (likes gaming)",
+        "A favourite film"
+      ],
+      "correctBucket": [2, 2, 2, 1, 1, 0, 0],
+      "feedback": {
+        "correct": "Well sorted. Anything that lets a stranger find him in person is high risk. Routines and full name plus birth date are medium. Vague tastes are low.",
+        "wrong": "Rethink it. If a piece of data helps a stranger locate Danny in the real world, it's high risk, not low."
+      },
+      "hints": [
+        "Ask one question of each trace: could a stranger use this to find Danny in person?",
+        "High risk = anything that pinpoints where he is (address, live location, school + face). Low risk = vague tastes with no location.",
+        "High: exact address, live location, school-plus-photo. Medium: weekly routine, full name plus birth date. Low: general hobby, favourite film."
+      ]
+    },
+    {
+      "id": "digital-footprint-p4",
+      "type": "order",
+      "prompt": "Final step: help Danny shrink his footprint. Put these clean-up actions in a sensible order, from the change that removes the most immediate real-world risk to the smallest tidy-up.",
+      "points": 100,
+      "items": [
+        "Remove his full birth date from the profile.",
+        "Turn off live location tagging on every post.",
+        "Set old location-tagged posts to private.",
+        "Untag himself from photos that show his school."
+      ],
+      "correctOrder": [1, 2, 3, 0],
+      "feedback": {
+        "correct": "Good order. Stop leaking live location first, lock down the old trail, remove the school tags, then tidy the birth date. Biggest real-world risk first.",
+        "wrong": "Not quite. Start with what a stranger could use to find him right now (live location), then the old trail, then school tags, then the birth date."
+      },
+      "hints": [
+        "Start with whatever a stranger could use to find Danny in person this minute.",
+        "Live location is the most urgent leak; a birth date is the least urgent of these four.",
+        "Order: turn off live location tagging, set old posts to private, untag the school photos, then remove the birth date."
+      ]
+    }
+  ],
+  "outro": {
+    "speaker": "Cipher",
+    "lines": [
+      "See how little it takes to find someone? None of this was secret on its own. ALGO just stitched the pieces together, and so did you.",
+      "You've marked the risky bits and shrunk his footprint. Remember it's your trail next time you post."
+    ]
+  },
+  "achievementHooks": ["no-hint-run", "perfect-mission"]
+}

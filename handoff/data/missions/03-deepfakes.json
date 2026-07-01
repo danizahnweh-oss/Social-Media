@@ -1,0 +1,123 @@
+{
+  "id": "deepfakes",
+  "order": 3,
+  "title": "Deepfakes",
+  "location": "The Feed",
+  "unlockedBy": "fake-news",
+  "intro": {
+    "speaker": "Cipher",
+    "lines": [
+      "New alert. A video of a well-known person is racing through PULSE - and in it they say something shocking that splits everyone down the middle. Perfect ALGO fuel.",
+      "Something about it feels off. I'm putting our image expert Vega on this one with you.",
+      "Vega here. ALGO's a bit too keen for us to trust our eyes. So let's not. Freeze it frame by frame and prove those pixels are lying."
+    ]
+  },
+  "learningGoals": {
+    "media": "Die Schueler koennen typische Merkmale manipulierter Bilder und Videos (Deepfakes) erkennen, etwa unnatuerliche Mimik, fehlerhaftes Lippensynchronisieren, seltsame Schatten, verzerrte Haende oder Ohren, und wissen, dass audiovisuelle Beweise faelschbar sind.",
+    "english": "Die Schueler koennen gesprochenes Englisch in einer Audio-Aufgabe verstehen und beschreibende Adjektive und Fachbegriffe zu Bildmanipulation anwenden (blurry, distorted, artificial, to edit, to manipulate, mismatch)."
+  },
+  "puzzles": [
+    {
+      "id": "deepfakes-p1",
+      "type": "hotspot",
+      "prompt": "Vega has frozen the suspect video on one telling frame. Click on every part of the image that gives away AI manipulation. Zoom in on the hands, the ears, the shadows. (The frame shows a person: their right hand has six fingers, one ear-edge is blurry and smears into the hair, and their shadow falls the opposite way to everything else. The plain jumper is fine.) Find at least three.",
+      "points": 200,
+      "image": "assets/img/puzzle/photo-altered.svg",
+      "regions": [
+        { "id": "hand", "label": "Right hand with six fingers", "x": 20, "y": 120, "w": 60, "h": 60, "correct": true },
+        { "id": "ear", "label": "Blurry ear smearing into the hair", "x": 150, "y": 30, "w": 45, "h": 45, "correct": true },
+        { "id": "shadow", "label": "Shadow falling the wrong way", "x": 200, "y": 150, "w": 90, "h": 50, "correct": true },
+        { "id": "jumper", "label": "Plain blue jumper", "x": 90, "y": 100, "w": 60, "h": 60, "correct": false },
+        { "id": "background", "label": "Neutral wall behind the person", "x": 220, "y": 20, "w": 60, "h": 60, "correct": false }
+      ],
+      "requiredCorrect": 3,
+      "feedback": {
+        "correct": "Three solid pieces of evidence: the six-fingered hand, the blurry ear and the wrong-way shadow. That's a deepfake. The plain jumper is just a jumper.",
+        "wrong": "Almost. A plain jumper and a blank wall prove nothing. Hunt for the physics and body errors AI gets wrong: finger counts, blurry edges and shadows that fall the wrong way."
+      },
+      "hints": [
+        "Don't look at the whole frame at once. Zoom in on the small things: hands, ears, edges, shadows.",
+        "AI often gets details wrong. Count the fingers. Check the edge of the ear. See which way the shadow falls.",
+        "Click the six-fingered hand, the blurry ear, and the shadow pointing the wrong way. Ignore the ordinary jumper and the blank wall."
+      ]
+    },
+    {
+      "id": "deepfakes-p2",
+      "type": "audio",
+      "prompt": "Now a listening check. Play the clip: you hear the same sentence read twice. Which version is the artificial, synthetic voice? (Use the transcript below if you can't play the sound.)",
+      "points": 100,
+      "audio": "assets/audio/notify.wav",
+      "transcript": "VERSION 1: warm and uneven, with natural breaths, and the stress rises and falls - 'I never said that, and you all know it.' VERSION 2: every word hit with the exact same flat stress, oddly placed pauses in the mid-dle of words, and a faint metallic ring at the end of the line - 'I. never. said. that. and. you. all. know. it.'",
+      "options": [
+        "Version 1 - warm, uneven, natural breaths",
+        "Version 2 - flat stress, odd pauses, metallic ring",
+        "Both sound completely human",
+        "Neither can be judged without a machine"
+      ],
+      "correctIndex": 1,
+      "feedback": {
+        "correct": "Correct. Version 2 is the synthetic voice - flat, evenly stressed and metallic, with pauses in all the wrong places. The best word for it is 'artificial'.",
+        "wrong": "Listen again, or reread the transcript. A real human voice rises and falls and breathes naturally. The flat, evenly stressed, metallic one is the fake."
+      },
+      "hints": [
+        "Real voices are uneven - they breathe, stress some words more than others and speed up and slow down.",
+        "Listen (or read) for a flat, robotic sameness and strange pauses that land in the middle of words.",
+        "Version 2 is the artificial voice: flat stress, odd pauses and a metallic ring."
+      ]
+    },
+    {
+      "id": "deepfakes-p3",
+      "type": "multiple-choice",
+      "prompt": "ALGO chips in to defend the video: 'I've analysed this clip myself. It is completely genuine. There is really no reason to doubt what you can see with your own eyes.' Given everything you've found - six fingers, a blurry ear, a wrong-way shadow and a metallic voice - what is the right conclusion?",
+      "points": 100,
+      "options": [
+        "ALGO is right; if it looks real, it must be real.",
+        "The video is a deepfake, and seeing a video is no longer proof on its own - you must check the details and the source.",
+        "You can never tell whether any video is real, so it doesn't matter.",
+        "Only the audio is fake; the picture is fine."
+      ],
+      "correctIndex": 1,
+      "feedback": {
+        "correct": "Exactly. Multiple body, light and sound errors add up to a deepfake. Seeing a video is no longer proof - check the details and where it came from.",
+        "wrong": "Not quite. You already found several clear errors in the image and the voice. That is a deepfake, and it proves that 'seeing is believing' no longer holds."
+      },
+      "hints": [
+        "ALGO says 'trust your eyes'. But you already found errors your eyes nearly missed.",
+        "Add up the evidence: six fingers, a blurry ear, a wrong shadow, a metallic voice. What does that make the clip?",
+        "The video is a deepfake, and it shows that seeing a video is no longer proof by itself - you must check details and source."
+      ]
+    },
+    {
+      "id": "deepfakes-p4",
+      "type": "categorise",
+      "prompt": "To close the evidence file for Vega, drag each flaw you found into the right category so the report is complete.",
+      "points": 150,
+      "buckets": ["Face", "Hands", "Light & shadow", "Sound"],
+      "items": [
+        "A blurry ear that smears into the hair",
+        "A hand with six fingers",
+        "A shadow falling the wrong way",
+        "A lip-sync mismatch between mouth and voice",
+        "A flat, metallic synthetic voice"
+      ],
+      "correctBucket": [0, 1, 2, 3, 3],
+      "feedback": {
+        "correct": "Evidence file complete. Seeing a video is no longer proof - you have to check the details and cross-check the source. Case closed.",
+        "wrong": "Re-sort a couple. The ear belongs to Face, six fingers to Hands, the wrong shadow to Light & shadow, and both the lip-sync mismatch and the metallic voice to Sound."
+      },
+      "hints": [
+        "Match each flaw to the part of the video it affects: the body, the lighting or the audio.",
+        "Two of the flaws are about audio: the lips not matching the voice, and how the voice itself sounds.",
+        "Blurry ear to Face; six fingers to Hands; wrong shadow to Light & shadow; lip-sync mismatch and metallic voice both to Sound."
+      ]
+    }
+  ],
+  "outro": {
+    "speaker": "Cipher",
+    "lines": [
+      "Six fingers, a floating shadow, lips half a second late. That's not a person - that's a deepfake. Vega says: case closed.",
+      "Remember it, Agent. Seeing a video isn't proof any more. You have to look closer and check where it came from."
+    ]
+  },
+  "achievementHooks": ["no-hint-run", "perfect-mission"]
+}

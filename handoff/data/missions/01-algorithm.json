@@ -1,0 +1,108 @@
+{
+  "id": "algorithm",
+  "order": 1,
+  "title": "The Algorithm",
+  "location": "The Feed",
+  "unlockedBy": null,
+  "intro": {
+    "speaker": "Cipher",
+    "lines": [
+      "Hey. I'm Cipher. That feed of yours? It's not showing you the world - it's showing you bait.",
+      "Same anomaly popped up in my feed, so I've been watching. Now I need a fresh pair of eyes. Yours.",
+      "First job: work out how ALGO decides what a person gets to see. Crack the selection logic and you've spotted the first trick. Let's prove it."
+    ]
+  },
+  "learningGoals": {
+    "media": "Die Schueler koennen erklaeren, nach welchen Signalen ein Empfehlungs-Algorithmus Inhalte auswaehlt und filtert (z. B. Verweildauer, Likes, Klicks, emotionale Reaktion) und warum er dabei aufwuehlende Inhalte bevorzugt.",
+    "english": "Die Schueler koennen laengere englische Texte und Kurznachrichten auf B2-Niveau verstehen und themenbezogenes Vokabular rund um Algorithmen (feed, engagement, recommendation, to filter, to prioritise) korrekt zuordnen."
+  },
+  "puzzles": [
+    {
+      "id": "algorithm-p1",
+      "type": "feed-mark",
+      "prompt": "Here is a raw feed before ALGO gets to it. Tap every post that ALGO would boost to the top - the ones that keep people staring or stir up strong feelings. Leave the calm, ordinary posts alone.",
+      "points": 150,
+      "instruction": "Mark all the posts ALGO would push hard (anger, shock and cuteness keep people scrolling).",
+      "posts": [
+        { "id": "a1", "handle": "@rageroom", "text": "You WON'T BELIEVE what this council just did - absolutely disgraceful!!!", "flag": true },
+        { "id": "a2", "handle": "@townweather", "text": "Light rain expected on Thursday, clearing by the weekend.", "flag": false },
+        { "id": "a3", "handle": "@cutepaws", "text": "Kitten falls asleep on a puppy and my heart just melted", "flag": true },
+        { "id": "a4", "handle": "@chessclub", "text": "Reminder: our monthly meeting is on Tuesday at 7pm in the hall.", "flag": false },
+        { "id": "a5", "handle": "@dramawatch", "text": "SHOCKING: is this the WORST decision in the town's history?!", "flag": true },
+        { "id": "a6", "handle": "@mate_sam", "text": "Morning everyone, hope you have a nice day :)", "flag": false }
+      ],
+      "feedback": {
+        "correct": "Spot on. The furious rant, the shock headline and the adorable kitten all rise. The calm, factual, ordinary posts get left behind.",
+        "wrong": "Not quite. ALGO doesn't care whether a post is true or kind - it cares whether it grabs attention. Mark anger, shock and cuteness; leave the calm, everyday posts."
+      },
+      "hints": [
+        "Ask one thing about each post: how long would it keep someone staring at the screen?",
+        "ALGO does not care whether a post is true or kind. It cares whether it triggers a strong reaction. Look for anger, shock and cuteness first.",
+        "Mark the furious rant, the shock headline and the cute kitten. Leave the weather, the chess club and the friendly hello."
+      ]
+    },
+    {
+      "id": "algorithm-p2",
+      "type": "order",
+      "prompt": "Each post carries little signals: angry reactions, shares, average watch time, plain likes. Drag them into a ranking from the signal ALGO rewards MOST to the one it rewards LEAST. Strongest first.",
+      "points": 200,
+      "items": [
+        "Angry reactions and shares (strong emotion, goes viral)",
+        "Average watch time (people keep watching)",
+        "Plain likes (a quick tap of approval)",
+        "Calm, factual content with no emotional reaction at all"
+      ],
+      "correctOrder": [0, 1, 2, 3],
+      "feedback": {
+        "correct": "Exactly. ALGO prioritises what fires people up and spreads fastest, then long watch time, then simple likes - and it barely rewards calm facts.",
+        "wrong": "Have another look. The signals that show strong emotion and go viral matter most; quiet, factual content is rewarded least."
+      },
+      "hints": [
+        "Which signal shows the strongest emotion and spreads the post to the most people?",
+        "Emotion and virality beat everything. A share sends a post to new eyes; a plain like barely moves it.",
+        "Order it: angry reactions and shares first, then average watch time, then plain likes, then calm factual content last."
+      ]
+    },
+    {
+      "id": "algorithm-p3",
+      "type": "chat-sim",
+      "prompt": "ALGO slides into your messages, all friendly. Read the exchange, then make the call.",
+      "points": 100,
+      "frame": "assets/img/puzzle/chat-frame.svg",
+      "script": [
+        { "from": "ALGO", "text": "Welcome back. I've tidied your feed so you only see what you truly enjoy." },
+        { "from": "ALGO", "text": "There's no need to look anywhere else - everything that matters is right here." },
+        { "from": "Cipher", "text": "Careful. He didn't add anything new. Look at what he took away." },
+        { "from": "Player", "text": "So the same posts are there... just reordered?" },
+        { "from": "Cipher", "text": "Exactly. Now tell me why his 'tidied' feed feels so much more extreme." }
+      ],
+      "decision": {
+        "prompt": "Why does ALGO's sorted feed look far more extreme and one-sided than the neutral one?",
+        "options": [
+          "ALGO added brand-new posts that were never there before.",
+          "Calm, neutral posts slide to the bottom, so only the most exciting, upsetting content is left on top.",
+          "The sorted feed simply has fewer posts in total.",
+          "ALGO reversed the order so the oldest posts appear first."
+        ],
+        "correctIndex": 1
+      },
+      "feedback": {
+        "correct": "That's it. Nothing new was added - the quiet stuff just sank, leaving a feed that feels louder and more extreme than reality.",
+        "wrong": "Look again. ALGO didn't invent new posts. He reordered them, pushing calm content down until only the loudest survives near the top."
+      },
+      "hints": [
+        "Both feeds contain the same posts. So what changed - the content, or the order?",
+        "Think about which posts drop away in the sorted feed and which ones stay near the top.",
+        "The calm, neutral posts slide to the bottom, so only the most exciting and upsetting content remains on top."
+      ]
+    }
+  ],
+  "outro": {
+    "speaker": "Cipher",
+    "lines": [
+      "Nice. See the pattern? The loudest stuff wins every time. That's not an accident - that's the design.",
+      "You've just seen ALGO's first move. There are plenty more. Welcome to the Resistance, Agent."
+    ]
+  },
+  "achievementHooks": ["first-mission-done", "no-hint-run", "perfect-mission"]
+}

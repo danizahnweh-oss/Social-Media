@@ -1,0 +1,121 @@
+{
+  "id": "echo-chambers",
+  "order": 4,
+  "title": "Echo Chambers",
+  "location": "The Backchannel",
+  "unlockedBy": "deepfakes",
+  "intro": {
+    "speaker": "Cipher",
+    "lines": [
+      "Come into the Backchannel, I want to show you something unsettling. Three PULSE users' feeds, side by side.",
+      "All three swear they're seeing 'the world'. But each one sees a completely different reality, because ALGO only feeds them what they already agree with.",
+      "That's an echo chamber, Agent. People hearing their own echo louder and louder. Let's expose it - and pop one bubble from the inside."
+    ]
+  },
+  "learningGoals": {
+    "media": "Die Schueler koennen beschreiben, wie Echokammern und Filterblasen entstehen, welchen Effekt sie auf die eigene Meinung haben (Bestaetigung statt Vielfalt) und wie man sie aktiv durchbricht (bewusst andere Quellen suchen).",
+    "english": "Die Schueler koennen Standpunkte und Argumente in englischen Kurztexten vergleichen und Vokabular zu Meinung und Perspektive anwenden (opinion, perspective, to agree/disagree, one-sided, balanced, bias)."
+  },
+  "puzzles": [
+    {
+      "id": "echo-chambers-p1",
+      "type": "multiple-choice",
+      "prompt": "You scroll through all three feeds. They all cover the exact same question - 'Should the town build a new skate park?' - yet they feel like three separate worlds. What is really going on?",
+      "points": 100,
+      "options": [
+        "The three users live in three different towns with different news.",
+        "Each feed shows only one side of the question, so every user thinks 'everyone agrees with me'.",
+        "The topic is genuinely too complicated to have more than one view.",
+        "ALGO simply forgot to update two of the feeds."
+      ],
+      "correctIndex": 1,
+      "feedback": {
+        "correct": "Exactly. Same topic, but each feed is filtered down to a single side. The feeling that 'everyone agrees with me' is manufactured.",
+        "wrong": "Look again - it's the same town and the same question in all three. The difference is that each feed has been filtered to show just one side."
+      },
+      "hints": [
+        "Look at all three feeds at once. They're about the same topic - so why do they feel like three different worlds?",
+        "Each feed only shows one side. Ask what's missing from each one.",
+        "Each feed shows only one side of the question, so every user is left thinking 'everyone agrees with me'."
+      ]
+    },
+    {
+      "id": "echo-chambers-p2",
+      "type": "categorise",
+      "prompt": "On the investigation board, sort these statements pulled from the three feeds into 'pro', 'contra' and 'neutral fact'. As you do, notice how lopsided the feeds really are.",
+      "points": 150,
+      "buckets": ["Pro (for the skate park)", "Contra (against the skate park)", "Neutral fact"],
+      "items": [
+        "'A skate park would finally give teens somewhere safe to hang out!'",
+        "'Building it will just bring noise and litter to our quiet street.'",
+        "'The council has set aside a plot of land near the river for the proposal.'",
+        "'Every kid I know is desperate for this - it's a no-brainer!'",
+        "'Nobody asked the neighbours, and that's not fair on residents.'",
+        "'The estimated cost of the project is 80,000 pounds.'"
+      ],
+      "correctBucket": [0, 1, 2, 0, 1, 2],
+      "feedback": {
+        "correct": "Well sorted. Now you can see it: one feed was nearly all 'pro', another nearly all 'contra', and the neutral facts were missing everywhere.",
+        "wrong": "Re-check a few. Excited support goes to 'pro', complaints and worries to 'contra', and plain checkable statements (land, cost) to 'neutral fact'."
+      },
+      "hints": [
+        "Is the statement cheering the park on, arguing against it, or just stating a checkable fact with no opinion?",
+        "Watch for the neutral facts - the plain, checkable statements about land and cost that carry no opinion.",
+        "The two excited-support lines are 'pro', the two complaint lines are 'contra', and the land plot and the cost are 'neutral fact'."
+      ]
+    },
+    {
+      "id": "echo-chambers-p3",
+      "type": "multi-select",
+      "prompt": "Feed A is almost entirely 'pro' skate park. To repair the bubble and make it balanced, select the missing pieces - the counter-arguments and neutral facts ALGO filtered out - that you should add back in.",
+      "points": 200,
+      "options": [
+        "'Some neighbours are worried about noise late at night.'",
+        "'The project would cost the town 80,000 pounds.'",
+        "'Skate parks are the best thing ever, full stop!'",
+        "'Not everyone skates, so is it fair to spend the budget on it?'",
+        "'Anyone against the park just hates young people.'"
+      ],
+      "correctIndices": [0, 1, 3],
+      "feedback": {
+        "correct": "That's a balanced feed. You added the missing worries and the neutral cost fact - the perspectives ALGO had quietly stripped out.",
+        "wrong": "Careful. Adding more one-sided cheering or an insult doesn't balance a feed. Add the genuine counter-points and the neutral facts that were missing."
+      },
+      "hints": [
+        "The feed is already stuffed with support. What's missing is the other side and the plain facts.",
+        "Avoid anything that's just more cheering, and avoid insults aimed at the other side - those don't balance a feed.",
+        "Add the noise worry, the cost fact and the fairness question. Leave out the extra cheering and the insult."
+      ]
+    },
+    {
+      "id": "echo-chambers-p4",
+      "type": "multiple-choice",
+      "prompt": "In a private chat, a friend inside the bubble writes, convinced: 'The skate park is obviously perfect and anyone against it is an idiot.' You want to open a window on another perspective without starting a fight. Which reply is best?",
+      "points": 100,
+      "options": [
+        "'You're completely wrong and you clearly haven't thought about it.'",
+        "'I get why you're keen on it. Have you seen the neighbours' side about the noise and cost, though?'",
+        "'Yeah, totally, anyone who disagrees is an idiot.'",
+        "'Whatever, I don't care about the skate park anyway.'"
+      ],
+      "correctIndex": 1,
+      "feedback": {
+        "correct": "Perfect. You acknowledged their view and then calmly brought in another perspective. That's how you pop a bubble without a fight.",
+        "wrong": "That reply either attacks, agrees blindly or shuts down. The best move recognises their view first, then gently adds the missing perspective."
+      },
+      "hints": [
+        "You want to add a perspective, not win a fight. How do you keep the friend listening?",
+        "Attacking them or agreeing blindly both fail. Acknowledge their view first, then offer another angle.",
+        "The best reply says you understand their view, then calmly asks if they've seen the other side (noise and cost)."
+      ]
+    }
+  ],
+  "outro": {
+    "speaker": "Cipher",
+    "lines": [
+      "That's it. You didn't win an argument - you opened a window. That's how you pop a bubble without a fight.",
+      "Comfortable feeds feel nice, but they're just mirrors. Keep looking for what ALGO cut out. Great work, Agent."
+    ]
+  },
+  "achievementHooks": ["no-hint-run", "perfect-mission"]
+}

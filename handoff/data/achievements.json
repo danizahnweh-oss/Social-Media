@@ -1,0 +1,34 @@
+{
+  "achievements": [
+    {
+      "id": "first-mission-done",
+      "title": "First Contact",
+      "description": "Complete your first mission for the Resistance.",
+      "condition": "Awarded when the first mission is completed."
+    },
+    {
+      "id": "no-hint-run",
+      "title": "Clear Signal",
+      "description": "Complete a mission without using a single hint.",
+      "condition": "Awarded per mission if no hint was revealed in that mission."
+    },
+    {
+      "id": "perfect-mission",
+      "title": "Flawless",
+      "description": "Complete a mission with no wrong answers.",
+      "condition": "Awarded per mission if every puzzle was solved on the first attempt."
+    },
+    {
+      "id": "campaign-complete",
+      "title": "Signal Restored",
+      "description": "Finish all ten missions and face ALGO.",
+      "condition": "Awarded when mission 10 (final-boss) is completed."
+    },
+    {
+      "id": "best-ending",
+      "title": "Ghost",
+      "description": "Reach the best ending by seeing through ALGO almost perfectly.",
+      "condition": "Awarded when the 'Signal restored' ending is reached (see config.json thresholds)."
+    }
+  ]
+}

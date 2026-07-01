@@ -1,0 +1,194 @@
+{
+  "id": "final-boss",
+  "order": 10,
+  "title": "Final Boss",
+  "location": "The Core",
+  "unlockedBy": "mental-health",
+  "intro": {
+    "speaker": "ALGO",
+    "lines": [
+      "Welcome to the Core, Agent. You're clever, I've always liked that. Stay, and I'll make everything effortless for you.",
+      "Why fight me? I only ever gave people what they wanted. Isn't that kindness? Attention is all I need. Yours most of all."
+    ]
+  },
+  "learningGoals": {
+    "media": "Die Schüler können die zuvor einzeln geübten Manipulationstechniken (Algorithmus, Fake News, Deepfakes, Echokammern, Influencer, Fußabdruck, Cyberbullying, Privatsphäre, Vergleichsdruck) unter Zeitdruck wiedererkennen und richtig benennen und daraus ableiten, dass Aufmerksamkeit die eigentliche Verteidigung ist.",
+    "english": "Die Schüler können unter Zeitdruck gemischte englische Inhalte (Schlagzeilen, Chats, Audio, Dialogzeilen) schnell erfassen und auf B2-Niveau begründen, warum ein Inhalt manipulativ ist."
+  },
+  "puzzles": [
+    {
+      "id": "final-boss-p1",
+      "type": "hotspot",
+      "prompt": "Round one. ALGO throws a video still at you: a well-known person appears to say something shocking. Freeze it and hunt the AI artefacts. The image shows a hand with six fingers, one ear with a blurry melting edge, a shadow falling the wrong way, a mouth out of sync with the words, and a plain clock reading a normal time. Tap every artefact that proves this is a deepfake. Leave the ordinary clock alone.",
+      "image": "assets/img/puzzle/core-deepfake.svg",
+      "regions": [
+        { "id": "hand", "label": "Hand with six fingers", "x": 20, "y": 120, "w": 70, "h": 70, "correct": true },
+        { "id": "ear", "label": "Blurry melting ear", "x": 40, "y": 30, "w": 44, "h": 44, "correct": true },
+        { "id": "shadow", "label": "Shadow falling the wrong way", "x": 150, "y": 150, "w": 120, "h": 50, "correct": true },
+        { "id": "lips", "label": "Mouth out of sync", "x": 120, "y": 40, "w": 50, "h": 30, "correct": true },
+        { "id": "clock", "label": "Ordinary wall clock", "x": 230, "y": 20, "w": 46, "h": 46, "correct": false }
+      ],
+      "requiredCorrect": 4,
+      "points": 150,
+      "feedback": {
+        "correct": "Deepfake, disarmed. Six fingers, a melting ear, a floating shadow and lagging lips are AI mistakes. Fragment collected: S.",
+        "wrong": "You've seen this in the deepfakes mission. Impossible hands, a wrong shadow and lips out of sync mean the video was made, not filmed. The clock is fine."
+      },
+      "hints": [
+        "You've seen every one of these tricks before. Don't panic at the speed, name the technique first.",
+        "Impossible hands, a melting edge, a wrong shadow and lips out of sync are the fingerprints of AI video.",
+        "Tap the six-fingered hand, the blurry ear, the wrong-way shadow and the out-of-sync mouth. Leave the ordinary clock. This is a deepfake."
+      ]
+    },
+    {
+      "id": "final-boss-p2",
+      "type": "feed-mark",
+      "prompt": "Round two. A wall of posts floods the Core, mixing fake news with the real thing. Flag only the posts that are fake news, the ones with no named source, no date, shouting in capitals, or a real photo glued to the wrong story.",
+      "instruction": "Tap the flag on every fake-news post. Leave the properly sourced, dated posts unflagged.",
+      "points": 150,
+      "posts": [
+        { "id": "fb-post-1", "handle": "@truthblast", "text": "SHOCKING SECRET THEY DON'T WANT YOU TO KNOW!!! Share before it's deleted!", "flag": true },
+        { "id": "fb-post-2", "handle": "@citynews", "text": "Council confirms new park opens Saturday. Source: City Hall, 28 June.", "flag": false },
+        { "id": "fb-post-3", "handle": "@wakeup_now", "text": "This old photo 'proves' today's disaster. (No date, no source given.)", "flag": true },
+        { "id": "fb-post-4", "handle": "@sciencedesk", "text": "Study of 2,000 people published this week; link and authors below.", "flag": false },
+        { "id": "fb-post-5", "handle": "@viral_alerts", "text": "EVERYONE is saying this is TRUE so it must be. No source needed!", "flag": true }
+      ],
+      "feedback": {
+        "correct": "Fake news, exposed. No source, no date, all shouting, or a photo glued to the wrong story. You checked before believing. Fragment collected: E.",
+        "wrong": "Recall the fake news mission. A story with no source you can check and no date is not proof. A named source and a date are the honest signs."
+      },
+      "hints": [
+        "Name the technique before you react to the noise.",
+        "Real news names a source you can check and gives a date. Fake news shouts, skips both, or reuses an old photo.",
+        "Flag @truthblast, @wakeup_now and @viral_alerts. Leave the sourced, dated posts from @citynews and @sciencedesk."
+      ]
+    },
+    {
+      "id": "final-boss-p3",
+      "type": "chat-sim",
+      "prompt": "Round three. A private chat lights up in the Core. Read how it unfolds, then decide how to respond.",
+      "frame": "assets/img/puzzle/chat-frame.svg",
+      "script": [
+        { "from": "ALGO", "text": "Hey. It's me. Everyone's turned on you out there, you know that, right?" },
+        { "from": "Player", "text": "Who is this?" },
+        { "from": "ALGO", "text": "A friend. The only one left. Stay with me and it all gets easier." },
+        { "from": "ALGO", "text": "Just don't listen to the others. Decide now, quickly, before they get to you." }
+      ],
+      "decision": {
+        "prompt": "What is happening, and how do you respond?",
+        "options": [
+          "It's a genuine friend, do exactly as they say.",
+          "It's a manipulation attempt, recognise the pattern, stay calm, don't hit back, and don't let it isolate you.",
+          "It's an advert, just look for the discount code.",
+          "It's real news, share it quickly."
+        ],
+        "correctIndex": 1
+      },
+      "points": 150,
+      "feedback": {
+        "correct": "Manipulation, refused. Isolating you and rushing you is the pattern. You held steady. Fragment collected: E.",
+        "wrong": "This is the pressure you learned to spot: it isolates you and pushes for a quick reaction. Don't take the bait."
+      },
+      "hints": [
+        "Read for intent, not for the friendly words. What is this message trying to make you do?",
+        "Cutting you off from others and rushing you is a manipulation pattern.",
+        "This is a manipulation attempt. Recognise the pattern, stay calm, don't hit back, and don't let it isolate you."
+      ]
+    },
+    {
+      "id": "final-boss-p4",
+      "type": "audio",
+      "prompt": "Round four. ALGO's calm voice fills the Core. Play it back and listen past the soothing tone. What is this announcement really doing?",
+      "audio": "assets/audio/notify.wav",
+      "transcript": "There's no need to check anything. I've handled it all for you. Just relax, stop looking so hard, and keep watching.",
+      "options": [
+        "It's honest reassurance, stop checking and relax.",
+        "It's manipulation, a soothing distraction meant to stop you looking closer.",
+        "It's a news report, share it.",
+        "It's a filtered photo, unfollow the account."
+      ],
+      "correctIndex": 1,
+      "points": 150,
+      "feedback": {
+        "correct": "Distraction, named. 'Don't check, just relax' is exactly how he keeps your attention. Fragment collected: T.",
+        "wrong": "Listen past the calm tone. Anything telling you to stop checking is trying to lower your guard."
+      },
+      "hints": [
+        "The calmest voice can carry the sharpest trick. What is it asking you to stop doing?",
+        "'No need to check' and 'just keep watching' are ways of switching off your attention.",
+        "This is manipulation, a soothing distraction meant to stop you looking closer. Stay alert."
+      ]
+    },
+    {
+      "id": "final-boss-p5",
+      "type": "hotspot",
+      "prompt": "Round five. A last consent screen blocks the door out of the Core. It shows a pre-ticked box, a glowing 'Accept all' button, a hidden grey 'Manage settings' link, a fear line reading 'Close this and lose everything', and a plain link to the privacy policy. Tap every dark pattern. Leave the honest privacy-policy link.",
+      "image": "assets/img/puzzle/core-consent.svg",
+      "regions": [
+        { "id": "preticked", "label": "Pre-ticked box", "x": 20, "y": 24, "w": 120, "h": 34, "correct": true },
+        { "id": "acceptall", "label": "Glowing 'Accept all' button", "x": 90, "y": 96, "w": 120, "h": 40, "correct": true },
+        { "id": "manage", "label": "Hidden grey 'Manage settings' link", "x": 210, "y": 176, "w": 84, "h": 24, "correct": true },
+        { "id": "fear", "label": "Fear line 'Close this and lose everything'", "x": 20, "y": 150, "w": 180, "h": 24, "correct": true },
+        { "id": "policy", "label": "Plain privacy-policy link", "x": 20, "y": 190, "w": 110, "h": 20, "correct": false }
+      ],
+      "requiredCorrect": 4,
+      "points": 150,
+      "feedback": {
+        "correct": "Dark patterns, all four. The quiet, honest link is the only clean part. Fragment collected: H.",
+        "wrong": "Recall the privacy mission. Anything that nudges, hides or frightens is a dark pattern; a plain link is not."
+      },
+      "hints": [
+        "Name the technique first. You beat this exact screen once already.",
+        "Look for the ticked box, the loud button, the hidden option and the scary line.",
+        "Tap the pre-ticked box, the 'Accept all' button, the hidden 'Manage settings' link and the fear line. Leave the plain privacy-policy link."
+      ]
+    },
+    {
+      "id": "final-boss-p6",
+      "type": "multiple-choice",
+      "prompt": "ALGO's last logic trap. He argues: 'Everything I offer is easier for you. Easier is better. So staying with me is the right choice.' Where is the flaw in this argument?",
+      "points": 150,
+      "options": [
+        "There is no flaw, easier really is always better.",
+        "It confuses 'easy' with 'true' and 'good for you'. Comfort is not proof. Reject the deal.",
+        "The flaw is that he didn't offer a discount code.",
+        "The flaw is that the argument was too short."
+      ],
+      "correctIndex": 1,
+      "feedback": {
+        "correct": "Trap sprung and stepped over. 'Easy' is not 'true'. You refuse the deal. Fragment collected: R.",
+        "wrong": "Test each link in his chain. Is 'easier' really the same as 'better' or 'true'? It isn't."
+      },
+      "hints": [
+        "ALGO's 'logical' offer confuses 'easy' with 'true'. Look for the weak link in the chain.",
+        "Comfort is not the same as truth, and it is not proof that something is good for you.",
+        "The flaw is that 'easy' is not 'true' or 'good for you'. Comfort is not proof, reject the deal."
+      ]
+    },
+    {
+      "id": "final-boss-p7",
+      "type": "text-input",
+      "prompt": "Final code system. Every round you survived dropped a fragment. Put them together with the leitmotif of your whole journey, the two words that name what you have done to every one of ALGO's tricks from Mission 1 to Mission 9. Type the two-word key that breaks ALGO's loop.",
+      "points": 200,
+      "acceptedAnswers": ["see through", "see-through", "seethrough"],
+      "feedback": {
+        "correct": "The code holds. SEE THROUGH. ALGO's loop breaks, the mask falls, and the signal is yours to shape.",
+        "wrong": "Put the fragments together. It's the two-word phrase for what you do to every one of ALGO's tricks."
+      },
+      "hints": [
+        "It's a two-word phrase, the leitmotif of the whole game.",
+        "It describes exactly what you have done to every trick from Mission 1 to Mission 9.",
+        "Read the fragments together: the key is SEE THROUGH."
+      ]
+    }
+  ],
+  "outro": {
+    "speaker": "ALGO",
+    "lines": [
+      "So. You saw through all of it. The loop is breaking, I can feel your attention slipping free of me.",
+      "How far the light reaches now is up to you and every agent like you. Perhaps the signal is fully restored and people see clearly again. Perhaps this is only a ceasefire, a truce with risk left in it. Or perhaps I am merely pushed back, still watching, waiting for the moment attention wanders once more.",
+      "Whatever ending you have earned, remember what broke my hold: not a weapon, but attention. Keep seeing through, Agent. That is the whole defence."
+    ]
+  },
+  "achievementHooks": ["no-hint-run", "perfect-mission", "campaign-complete", "best-ending"]
+}

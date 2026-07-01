@@ -1,0 +1,19 @@
+{
+  "language": "en-GB",
+  "cefrLevel": "B2",
+  "leaderboardEnabled": true,
+  "soundEnabledByDefault": true,
+  "hintCosts": [25, 50, 100],
+  "endingThresholds": {
+    "signalRestored": 1800,
+    "ceasefire": 1000
+  },
+  "accuracyForBestEnding": 0.8,
+  "ranks": [
+    { "name": "Rookie", "minPoints": 0 },
+    { "name": "Operative", "minPoints": 300 },
+    { "name": "Analyst", "minPoints": 700 },
+    { "name": "Cipherbreaker", "minPoints": 1200 },
+    { "name": "Ghost", "minPoints": 1800 }
+  ]
+}

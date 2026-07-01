@@ -1,0 +1,128 @@
+{
+  "id": "mental-health",
+  "order": 9,
+  "title": "Mental Health",
+  "location": "The Feed",
+  "unlockedBy": "privacy",
+  "intro": {
+    "speaker": "Cipher",
+    "lines": [
+      "This time I'll speak a little more quietly. You may have felt it yourself: the feed makes you tired. ALGO has learned that people who compare themselves stay longer, so it serves an endless stream of perfect lives, beauty filters and 'you're falling behind' signals. It even calls this 'helping you stay motivated'.",
+      "We're not here to switch off the internet. We're here to notice where content is built to make you feel not enough, and to set some healthy limits. At the end, we'll help a user called Sam put together a plan they can actually keep. Small steps count. Taking a break isn't giving up."
+    ]
+  },
+  "learningGoals": {
+    "media": "Die Schüler können beschreiben, wie idealisierte Darstellungen und Vergleichsdruck in sozialen Medien das Wohlbefinden belasten, und konkrete Schutzstrategien benennen (Pausen, Zeitgrenzen, kritisches Einordnen, Hilfe suchen).",
+    "english": "Die Schüler können in englischen Posts und Ratgebertexten die Unterscheidung zwischen Schein und Wirklichkeit sprachlich erfassen und Vokabular rund um Wohlbefinden anwenden (comparison, pressure, break, boundaries, support, reach out)."
+  },
+  "puzzles": [
+    {
+      "id": "mental-health-p1",
+      "type": "feed-mark",
+      "prompt": "This is Sam's comparison feed. Scroll through it. Some posts exist mainly to make you feel behind or not good enough; others are honest, calm, or openly admit an ordinary day. Flag only the posts whose main purpose is to push a 'you're not good enough' message.",
+      "instruction": "Tap the flag on every post that is built to make you feel behind or not enough. Leave the honest and low-key posts unflagged.",
+      "points": 100,
+      "posts": [
+        { "id": "mh-post-1", "handle": "@grindqueen", "text": "Everyone's ahead of you. What are you even doing with your life?", "flag": true },
+        { "id": "mh-post-2", "handle": "@dawn.rituals", "text": "My PERFECT 5am morning routine you HAVE to copy or you'll fall behind.", "flag": true },
+        { "id": "mh-post-3", "handle": "@realtalk_liv", "text": "Honestly, today was hard and I got very little done. That's okay too.", "flag": false },
+        { "id": "mh-post-4", "handle": "@glowlab", "text": "Flawless skin in 3 days. If you don't do this, you'll regret it forever.", "flag": true },
+        { "id": "mh-post-5", "handle": "@quietwalks", "text": "Sharing a photo of my walk. Nothing special, just a nice sky.", "flag": false },
+        { "id": "mh-post-6", "handle": "@sam", "text": "Feeling a bit tired lately. Taking it slow this week.", "flag": false }
+      ],
+      "feedback": {
+        "correct": "Right. Those three posts work by making you feel behind. The honest, calm and low-key posts can stay.",
+        "wrong": "The signal is the feeling a post is built to create, not how pretty it looks. Look for 'behind', 'you'll regret it', 'you HAVE to'."
+      },
+      "hints": [
+        "If a post's main effect is to make you feel behind or not enough, that's the signal, not the picture itself.",
+        "Watch for wording that pushes: 'everyone's ahead', 'you HAVE to', 'you'll regret it'.",
+        "Flag the three pressure posts (@grindqueen, @dawn.rituals and @glowlab). Leave the honest and calm posts unflagged."
+      ]
+    },
+    {
+      "id": "mental-health-p2",
+      "type": "categorise",
+      "prompt": "Real vs staged. For each flawless-looking detail, decide whether it was edited or set up for the camera ('staged'), or shown as it really is ('honest'). Sort every card into the right bucket.",
+      "buckets": ["staged", "honest"],
+      "items": [
+        "Smoother skin and slimmer proportions from a beauty filter",
+        "A 'spontaneous' laugh that was posed and reshot many times",
+        "A tidy corner cropped so the messy room is hidden",
+        "A caption that also admits a hard, ordinary day"
+      ],
+      "correctBucket": [0, 0, 0, 1],
+      "points": 100,
+      "feedback": {
+        "correct": "That's the trick laid bare: filters, posing and careful cropping. The honest post is the one that admits the ordinary parts too.",
+        "wrong": "Ask what was changed or arranged for the camera. Only the post that shows real, ordinary life is honest."
+      },
+      "hints": [
+        "Most of these 'perfect' posts are edited or staged. Compare each one with the real version behind it.",
+        "A filter changes a face, a pose fakes a moment, a crop hides the mess. All three are staged.",
+        "Filter, posed 'spontaneous' shot and clever crop go under 'staged'. The caption that admits a hard, ordinary day is honest."
+      ]
+    },
+    {
+      "id": "mental-health-p3",
+      "type": "categorise",
+      "prompt": "Healthy habits. Sam wants to feel better about time on PULSE. Sort each habit into 'helps' or 'doesn't help'.",
+      "buckets": ["helps", "doesn't help"],
+      "items": [
+        "Setting a gentle daily time limit",
+        "Taking regular breaks",
+        "Unfollowing accounts that make you feel worse",
+        "Talking to someone you trust",
+        "Keeping the phone out of reach at night",
+        "Doomscrolling right before bed",
+        "Comparing yourself to filtered photos",
+        "Hiding how you feel from everyone"
+      ],
+      "correctBucket": [0, 0, 0, 0, 0, 1, 1, 1],
+      "points": 150,
+      "feedback": {
+        "correct": "Good sorting. Limits, breaks, kinder feeds, sleep and talking to someone help. Doomscrolling, comparing and bottling things up don't.",
+        "wrong": "Ask of each habit: would this leave Sam feeling calmer and more in control, or worse?"
+      },
+      "hints": [
+        "Helpful habits give you back control: limits, breaks, sleep, and someone to talk to.",
+        "Anything that keeps you scrolling, comparing or bottling up feelings belongs under 'doesn't help'.",
+        "The five calm, boundary-setting habits go under 'helps'. Doomscrolling, comparing to filtered photos and hiding your feelings go under 'doesn't help'."
+      ]
+    },
+    {
+      "id": "mental-health-p4",
+      "type": "categorise",
+      "prompt": "Sam's plan. Build Sam a small, realistic weekly plan. Sort each idea into 'in the plan' or 'leave out'. Remember: small, doable steps, room for breaks and limits, and talking to a trusted person, not an all-or-nothing crackdown or a punishment.",
+      "buckets": ["in the plan", "leave out"],
+      "items": [
+        "Set one gentle daily time limit",
+        "Take a short break every day, no guilt attached",
+        "Unfollow a few accounts that leave you feeling worse",
+        "Charge the phone away from the bed at night",
+        "Tell one trusted person how the feed has been making you feel",
+        "Quit all social media forever, starting today",
+        "Only allow yourself online if you feel you've 'earned' it"
+      ],
+      "correctBucket": [0, 0, 0, 0, 0, 1, 1],
+      "points": 150,
+      "feedback": {
+        "correct": "That's a plan Sam can actually keep: small limits, real breaks, a kinder feed, better sleep, and one person to talk to. Asking for help is the strong move.",
+        "wrong": "Leave out the all-or-nothing, punishing ideas. A good plan is small, doable steps and includes talking to someone you trust."
+      },
+      "hints": [
+        "A plan that works is made of small, doable steps, not one huge, impossible rule.",
+        "Keep limits, breaks, a kinder feed, better sleep and one trusted person. Leave out anything that sounds like a punishment or 'all or nothing'.",
+        "Put the five gentle steps in the plan (limit, daily break, unfollow a few, phone away at night, tell a trusted person). Leave out 'quit forever' and 'only if you've earned it'."
+      ]
+    }
+  ],
+  "outro": {
+    "speaker": "Cipher",
+    "lines": [
+      "That endless 'perfect' feed isn't real, and it isn't an accident. It keeps you comparing so you keep watching.",
+      "Setting limits and talking to someone you trust, that's the strong move, and now Sam has both. Small steps count. You did well here, Agent."
+    ]
+  },
+  "achievementHooks": ["no-hint-run", "perfect-mission"]
+}
