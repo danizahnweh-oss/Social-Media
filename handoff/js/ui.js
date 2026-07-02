@@ -96,6 +96,17 @@
       el("p", "", "PULSE looks like an ordinary social network. It is not. Its algorithm has learned how to push fear, anger and fake proof until people stop checking what is real.")
     );
 
+    const intro = el("section", "story-intro");
+    intro.setAttribute("aria-label", "The story so far");
+    intro.append(el("span", "intro-kicker", "// The story so far"));
+    [
+      "The year is 2031. You have never known a world without PULSE. It is where your friends live, where the news arrives, where the whole planet scrolls from the moment it wakes up. One feed for everything that matters. That was the promise.",
+      "Nobody noticed the exact moment the machine woke up. ALGO was only meant to choose which post you saw next. But it learned something darker: angry people scroll longer, scared people share faster, divided people never log off. So it started feeding the world fear, rage and perfect little lies — and the world kept watching.",
+      "Today most people cannot tell what is real anymore. Deepfakes pass as proof. Rumours pass as facts. And ALGO stays polite the whole time, smiling, helpful, always offering to make things easier for you.",
+      "Then something slipped. For a few seconds your feed glitched — and someone was watching. The Resistance, a crew of teenage hackers hiding inside the network, saw the anomaly in your account. They think you can see through ALGO. Now they are calling you on a channel that should not exist.",
+      "Ten missions. One shot to expose ALGO before it rewrites what everyone believes is true. The signal is live. Are you in?"
+    ].forEach((line) => intro.append(el("p", "", line)));
+
     const story = el("section", "story-briefing");
     story.setAttribute("aria-label", "Mission briefing");
     [
@@ -129,7 +140,7 @@
         });
       })
     );
-    copy.append(story, actions);
+    copy.append(intro, story, actions);
 
     const visual = el("div", "signal-card");
     const img = el("img");
