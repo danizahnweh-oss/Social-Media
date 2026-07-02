@@ -82,8 +82,17 @@
     {
       "id": "fake-news-p4",
       "type": "categorise",
-      "prompt": "Final step: run the suspicious story through your five-point fake-news checklist. For each finding, decide for yourself - does the story PASS this check, or is it a red flag that FAILS? Sort all five correctly to unlock the mission code.",
+      "prompt": "Final step: run the suspicious story through your five-point fake-news checklist. Read the post below, then decide for each finding - does it PASS this check, or is it a red flag that FAILS? Sort all five correctly to unlock the mission code.",
       "points": 200,
+      "scenario": {
+        "label": "The exact story ALGO is pushing across the feed",
+        "handle": "@TruthBlastDaily",
+        "headline": "TOWN WATER POISONED - THEY ARE HIDING IT FROM YOU!!!",
+        "image": "assets/img/puzzle/fake-news-photo-real.png",
+        "imageAlt": "A large crowd of people, the same recycled photograph attached to the headline.",
+        "body": "SHARE THIS NOW before they delete it!!! Thousands are already sick and the council is COVERING IT UP. Do not drink a single drop. Wake up people!!!",
+        "note": "No author is named on the post. No date appears anywhere. And Cipher confirms: not one other news outlet is carrying this story."
+      },
       "buckets": ["PASS - this check holds up", "FAIL - red flag"],
       "items": [
         "Source: the post names no author and links to a site nobody has heard of.",

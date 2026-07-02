@@ -413,6 +413,22 @@
 
       const card = el("article", "puzzle-card");
       card.append(el("p", "prompt", puzzle.prompt));
+      if (puzzle.scenario) {
+        const sc = puzzle.scenario;
+        const storyCard = el("figure", "scenario-card");
+        if (sc.label) storyCard.append(el("figcaption", "scenario-label", sc.label));
+        if (sc.handle) storyCard.append(el("span", "scenario-handle", sc.handle));
+        if (sc.headline) storyCard.append(el("h3", "scenario-headline", sc.headline));
+        if (sc.image) {
+          const im = el("img", "scenario-image");
+          im.src = sc.image;
+          im.alt = sc.imageAlt || "";
+          storyCard.append(im);
+        }
+        if (sc.body) storyCard.append(el("p", "scenario-body", sc.body));
+        if (sc.note) storyCard.append(el("p", "scenario-note", sc.note));
+        card.append(storyCard);
+      }
       const renderArea = el("div");
       let submit;
       renderArea.append(PuzzleRenderers.render(puzzle, (answer) => {
