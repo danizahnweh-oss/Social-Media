@@ -81,25 +81,26 @@
     },
     {
       "id": "fake-news-p4",
-      "type": "order",
-      "prompt": "To unlock the mission code, run the suspicious story through the five-point checklist. Arrange the checks in this fixed order - Source, Date, Emotion, Cross-check, Photo - so the pattern of pass/fail forms the code FAIL - FAIL - FAIL - FAIL - PASS.",
+      "type": "categorise",
+      "prompt": "Final step: run the suspicious story through your five-point fake-news checklist. For each finding, decide for yourself - does the story PASS this check, or is it a red flag that FAILS? Sort all five correctly to unlock the mission code.",
       "points": 200,
+      "buckets": ["PASS - this check holds up", "FAIL - red flag"],
       "items": [
-        "Source: FAIL (no author, unknown site)",
-        "Date: FAIL (no date given at all)",
-        "Emotion: FAIL (all-caps, exclamation marks, panic language)",
-        "Cross-check: FAIL (no other outlet reports this)",
-        "Photo: PASS (the image is a real photo, only misused)"
+        "Source: the post names no author and links to a site nobody has heard of.",
+        "Date: there is no date on the story anywhere.",
+        "Tone: it SHOUTS in capitals with panic words and rows of exclamation marks.",
+        "Cross-check: no other news outlet is reporting this at all.",
+        "Photo: the attached image is a genuine, unedited photograph."
       ],
-      "correctOrder": [0, 1, 2, 3, 4],
+      "correctBucket": [1, 1, 1, 1, 0],
       "feedback": {
-        "correct": "FAIL-FAIL-FAIL-FAIL-PASS. Code accepted. A single story with no checkable source and no confirmation elsewhere must never be treated as true.",
-        "wrong": "Keep the checklist order fixed: Source, Date, Emotion, Cross-check, then Photo. Four fails, one conditional pass."
+        "correct": "Four fails, one pass. Code accepted. Only the photo passes its own check - the image really is genuine (the trick was that it was recycled, not faked). No named source, no date, panic tone and no confirmation anywhere: this story must never be treated as true.",
+        "wrong": "Look at each finding again. A missing source, a missing date, all-caps panic and no other outlet confirming it are all red flags - they FAIL. The photo is the odd one out: the image itself is real, so that single check PASSES."
       },
       "hints": [
-        "Run the checklist in the given order and decide pass or fail for each point.",
-        "Only one item is a 'pass' - the photo is a real image (just misused). The other four all fail.",
-        "The order is Source, Date, Emotion, Cross-check, Photo, giving FAIL-FAIL-FAIL-FAIL-PASS."
+        "Ask of each finding: does this build trust, or destroy it? Trust = PASS, red flag = FAIL.",
+        "Four of the five findings are classic warning signs and fail. Only one thing about the story actually holds up.",
+        "No source, no date, panic tone and no cross-check all FAIL. The photo PASSES - the image is genuine, it was just misused earlier."
       ]
     }
   ],
