@@ -20,11 +20,11 @@
     {
       "id": "deepfakes-p1",
       "type": "hotspot",
-      "prompt": "Vega has frozen the suspect video on one telling frame. Click on every part of the image that gives away AI manipulation. Zoom in on the hands, the ears, the shadows. (The frame shows a person: their right hand has six fingers, one ear-edge is blurry and smears into the hair, and their shadow falls the opposite way to everything else. The plain jumper is fine.) Find at least three.",
+      "prompt": "Vega has frozen the suspect video on one telling frame. Click on every part of the image that gives away AI manipulation. Zoom in on the hand, the ear, the shadows. (The frame shows a person: the raised hand has warped, impossible finger spacing, one ear-edge is blurry and smears into the hair, and the shadow falls the opposite way to everything else. The plain jumper is fine.) Find at least three.",
       "points": 200,
-      "image": "assets/img/puzzle/photo-altered.svg",
+      "image": "assets/img/puzzle/deepfake-frame-real.png",
       "regions": [
-        { "id": "hand", "label": "Right hand with six fingers", "x": 20, "y": 120, "w": 60, "h": 60, "correct": true },
+        { "id": "hand", "label": "Warped hand with impossible finger spacing", "x": 20, "y": 108, "w": 72, "h": 80, "correct": true },
         { "id": "ear", "label": "Blurry ear smearing into the hair", "x": 150, "y": 30, "w": 45, "h": 45, "correct": true },
         { "id": "shadow", "label": "Shadow falling the wrong way", "x": 200, "y": 150, "w": 90, "h": 50, "correct": true },
         { "id": "jumper", "label": "Plain blue jumper", "x": 90, "y": 100, "w": 60, "h": 60, "correct": false },
@@ -32,13 +32,13 @@
       ],
       "requiredCorrect": 3,
       "feedback": {
-        "correct": "Three solid pieces of evidence: the six-fingered hand, the blurry ear and the wrong-way shadow. That's a deepfake. The plain jumper is just a jumper.",
-        "wrong": "Almost. A plain jumper and a blank wall prove nothing. Hunt for the physics and body errors AI gets wrong: finger counts, blurry edges and shadows that fall the wrong way."
+        "correct": "Three solid pieces of evidence: the warped hand, the blurry ear and the wrong-way shadow. That's a deepfake. The plain jumper is just a jumper.",
+        "wrong": "Almost. A plain jumper and a blank wall prove nothing. Hunt for the physics and body errors AI gets wrong: warped hands, blurry edges and shadows that fall the wrong way."
       },
       "hints": [
         "Don't look at the whole frame at once. Zoom in on the small things: hands, ears, edges, shadows.",
-        "AI often gets details wrong. Count the fingers. Check the edge of the ear. See which way the shadow falls.",
-        "Click the six-fingered hand, the blurry ear, and the shadow pointing the wrong way. Ignore the ordinary jumper and the blank wall."
+        "AI often gets details wrong. Check the raised hand, the edge of the ear, and which way the shadow falls.",
+        "Click the warped hand, the blurry ear, and the shadow pointing the wrong way. Ignore the ordinary jumper and the blank wall."
       ]
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "deepfakes-p3",
       "type": "multiple-choice",
-      "prompt": "ALGO chips in to defend the video: 'I've analysed this clip myself. It is completely genuine. There is really no reason to doubt what you can see with your own eyes.' Given everything you've found - six fingers, a blurry ear, a wrong-way shadow and a metallic voice - what is the right conclusion?",
+      "prompt": "ALGO chips in to defend the video: 'I've analysed this clip myself. It is completely genuine. There is really no reason to doubt what you can see with your own eyes.' Given everything you've found - a warped hand, a blurry ear, a wrong-way shadow and a metallic voice - what is the right conclusion?",
       "points": 100,
       "options": [
         "ALGO is right; if it looks real, it must be real.",
@@ -83,7 +83,7 @@
       },
       "hints": [
         "ALGO says 'trust your eyes'. But you already found errors your eyes nearly missed.",
-        "Add up the evidence: six fingers, a blurry ear, a wrong shadow, a metallic voice. What does that make the clip?",
+        "Add up the evidence: a warped hand, a blurry ear, a wrong shadow, a metallic voice. What does that make the clip?",
         "The video is a deepfake, and it shows that seeing a video is no longer proof by itself - you must check details and source."
       ]
     },
@@ -95,7 +95,7 @@
       "buckets": ["Face", "Hands", "Light & shadow", "Sound"],
       "items": [
         "A blurry ear that smears into the hair",
-        "A hand with six fingers",
+        "A warped hand with impossible finger spacing",
         "A shadow falling the wrong way",
         "A lip-sync mismatch between mouth and voice",
         "A flat, metallic synthetic voice"
@@ -103,12 +103,12 @@
       "correctBucket": [0, 1, 2, 3, 3],
       "feedback": {
         "correct": "Evidence file complete. Seeing a video is no longer proof - you have to check the details and cross-check the source. Case closed.",
-        "wrong": "Re-sort a couple. The ear belongs to Face, six fingers to Hands, the wrong shadow to Light & shadow, and both the lip-sync mismatch and the metallic voice to Sound."
+        "wrong": "Re-sort a couple. The ear belongs to Face, the warped hand to Hands, the wrong shadow to Light & shadow, and both the lip-sync mismatch and the metallic voice to Sound."
       },
       "hints": [
         "Match each flaw to the part of the video it affects: the body, the lighting or the audio.",
         "Two of the flaws are about audio: the lips not matching the voice, and how the voice itself sounds.",
-        "Blurry ear to Face; six fingers to Hands; wrong shadow to Light & shadow; lip-sync mismatch and metallic voice both to Sound."
+        "Blurry ear to Face; warped hand to Hands; wrong shadow to Light & shadow; lip-sync mismatch and metallic voice both to Sound."
       ]
     }
   ],

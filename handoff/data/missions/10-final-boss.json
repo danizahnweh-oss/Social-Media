@@ -19,11 +19,11 @@
     {
       "id": "final-boss-p1",
       "type": "hotspot",
-      "prompt": "Round one. ALGO throws a video still at you: a well-known person appears to say something shocking. Freeze it and hunt the AI artefacts. The image shows a hand with six fingers, one ear with a blurry melting edge, a shadow falling the wrong way, a mouth out of sync with the words, and a plain clock reading a normal time. Tap every artefact that proves this is a deepfake. Leave the ordinary clock alone.",
-      "image": "assets/img/puzzle/core-deepfake.svg",
+      "prompt": "Round one. ALGO throws a video still at you: a public speaker appears to say something shocking. Freeze it and hunt the AI artefacts. The image shows a warped hand, one ear with a blurry melting edge, a shadow falling the wrong way, a mouth out of sync with the words, and a plain clock reading a normal time. Tap every artefact that proves this is a deepfake. Leave the ordinary clock alone.",
+      "image": "assets/img/puzzle/core-deepfake-real.png",
       "regions": [
-        { "id": "hand", "label": "Hand with six fingers", "x": 20, "y": 120, "w": 70, "h": 70, "correct": true },
-        { "id": "ear", "label": "Blurry melting ear", "x": 40, "y": 30, "w": 44, "h": 44, "correct": true },
+        { "id": "hand", "label": "Warped hand", "x": 18, "y": 120, "w": 76, "h": 78, "correct": true },
+        { "id": "ear", "label": "Blurry melting ear", "x": 38, "y": 32, "w": 52, "h": 58, "correct": true },
         { "id": "shadow", "label": "Shadow falling the wrong way", "x": 150, "y": 150, "w": 120, "h": 50, "correct": true },
         { "id": "lips", "label": "Mouth out of sync", "x": 120, "y": 40, "w": 50, "h": 30, "correct": true },
         { "id": "clock", "label": "Ordinary wall clock", "x": 230, "y": 20, "w": 46, "h": 46, "correct": false }
@@ -31,13 +31,13 @@
       "requiredCorrect": 4,
       "points": 150,
       "feedback": {
-        "correct": "Deepfake, disarmed. Six fingers, a melting ear, a floating shadow and lagging lips are AI mistakes. Fragment collected: S.",
-        "wrong": "You've seen this in the deepfakes mission. Impossible hands, a wrong shadow and lips out of sync mean the video was made, not filmed. The clock is fine."
+        "correct": "Deepfake, disarmed. A warped hand, a melting ear, a floating shadow and lagging lips are AI mistakes. Fragment collected: S.",
+        "wrong": "You've seen this in the deepfakes mission. Warped hands, a wrong shadow and lips out of sync mean the video was made, not filmed. The clock is fine."
       },
       "hints": [
         "You've seen every one of these tricks before. Don't panic at the speed, name the technique first.",
         "Impossible hands, a melting edge, a wrong shadow and lips out of sync are the fingerprints of AI video.",
-        "Tap the six-fingered hand, the blurry ear, the wrong-way shadow and the out-of-sync mouth. Leave the ordinary clock. This is a deepfake."
+        "Tap the warped hand, the blurry ear, the wrong-way shadow and the out-of-sync mouth. Leave the ordinary clock. This is a deepfake."
       ]
     },
     {

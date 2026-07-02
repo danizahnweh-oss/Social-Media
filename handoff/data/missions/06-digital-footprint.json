@@ -21,7 +21,7 @@
       "type": "hotspot",
       "prompt": "Two of Danny's photos leak his location through background details, not the people in front. Tap the details that reveal where he is. The image shows two snapshots side by side: on the left, friends grinning with a street sign clearly reading 'Mill Lane' behind them; on the right, Danny in a jumper with a stitched school badge reading 'Riverside School' against a plain wall. A close-up plate of chips sits at the bottom with no background at all.",
       "points": 200,
-      "image": "assets/img/puzzle/footprint-photos.svg",
+      "image": "assets/img/puzzle/footprint-photos-real.png",
       "regions": [
         {
           "id": "hs-sign",
@@ -44,10 +44,10 @@
         {
           "id": "hs-badge",
           "label": "'Riverside School' badge on the jumper",
-          "x": 185,
-          "y": 90,
-          "w": 70,
-          "h": 44,
+          "x": 188,
+          "y": 38,
+          "w": 86,
+          "h": 72,
           "correct": true
         },
         {
