@@ -72,8 +72,8 @@
     },
     {
       "id": "influencer-p2",
-      "type": "hotspot",
-      "prompt": "Freeze a frame of Kai's latest 'day in my life' clip. Several advertising signals are hidden in it, easy to miss at normal speed. Tap every clear advertising signal on the still. The image shows a phone screen: a tiny '#ad' half scrolled off the top corner, a subtitle bar reading 'use code KAI15 at checkout', a drinks bottle turned so its logo faces the lens, a 'link below to grab yours' banner, plus his dog and a neighbour waving in the background.",
+      "type": "draw-spot",
+      "prompt": "Freeze a frame of Kai's latest 'day in my life' clip. Several advertising signals are hidden in it, easy to miss at normal speed. Draw a box around every clear advertising signal on the still. The image shows a phone screen: a tiny '#ad' half scrolled off the top corner, a subtitle bar reading 'use code KAI15 at checkout', a drinks bottle turned so its logo faces the lens, a 'link below to grab yours' banner, plus his dog and a neighbour waving in the background.",
       "points": 150,
       "image": "assets/img/puzzle/influencer-clip-real.png",
       "regions": [

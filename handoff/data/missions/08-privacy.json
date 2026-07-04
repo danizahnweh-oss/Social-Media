@@ -18,8 +18,8 @@
   "puzzles": [
     {
       "id": "privacy-p1",
-      "type": "hotspot",
-      "prompt": "Here is the PULSE Connect consent screen. It shows an already-ticked consent box near the top left, a huge glowing green 'Accept all' button in the centre, a tiny grey 'Manage settings' link tucked in the bottom corner, a bold red fear line reading 'You may miss out on friends', and a plain, honest link to the privacy policy. Tap every dark pattern ALGO is using to steer you towards 'Accept all'. Leave the honest privacy-policy link alone.",
+      "type": "draw-spot",
+      "prompt": "Here is the PULSE Connect consent screen. It shows an already-ticked consent box near the top left, a huge glowing green 'Accept all' button in the centre, a tiny grey 'Manage settings' link tucked in the bottom corner, a bold red fear line reading 'You may miss out on friends', and a plain, honest link to the privacy policy. Draw a box around every dark pattern ALGO is using to steer you towards 'Accept all'. Leave the honest privacy-policy link alone.",
       "image": "assets/img/puzzle/consent-screen.svg",
       "regions": [
         { "id": "preticked", "label": "Pre-ticked consent box", "x": 20, "y": 24, "w": 120, "h": 34, "correct": true },

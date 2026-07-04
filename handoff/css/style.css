@@ -837,6 +837,28 @@ input:focus-visible,
   background: rgba(0, 245, 212, 0.18);
 }
 
+.draw-layer {
+  position: absolute;
+  inset: 0;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.drawn-box {
+  position: absolute;
+  border: 2.5px solid var(--cyan);
+  border-radius: 50%;
+  background: rgba(0, 245, 212, 0.12);
+  box-shadow: 0 0 0 1px rgba(4, 8, 13, 0.5), 0 0 14px rgba(0, 245, 212, 0.35);
+  cursor: pointer;
+}
+
+.drawn-box.ghost {
+  border-style: dashed;
+  background: rgba(0, 245, 212, 0.08);
+  pointer-events: none;
+}
+
 .chat-sim {
   max-height: 420px;
   overflow: auto;

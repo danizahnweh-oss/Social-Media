@@ -18,8 +18,8 @@
   "puzzles": [
     {
       "id": "final-boss-p1",
-      "type": "hotspot",
-      "prompt": "Round one. ALGO throws a video still at you: a public speaker appears to say something shocking. Freeze it and hunt the AI artefacts. The image shows a warped hand, one ear with a blurry melting edge, a shadow falling the wrong way, a mouth out of sync with the words, and a plain clock reading a normal time. Tap every artefact that proves this is a deepfake. Leave the ordinary clock alone.",
+      "type": "draw-spot",
+      "prompt": "Round one. ALGO throws a video still at you: a public speaker appears to say something shocking. Freeze it and hunt the AI artefacts. The image shows a warped hand, one ear with a blurry melting edge, a shadow falling the wrong way, a mouth out of sync with the words, and a plain clock reading a normal time. Draw a box around every artefact that proves this is a deepfake. Leave the ordinary clock alone.",
       "image": "assets/img/puzzle/core-deepfake-real.png",
       "regions": [
         { "id": "hand", "label": "Warped hand", "x": 18, "y": 120, "w": 76, "h": 78, "correct": true },
@@ -121,8 +121,8 @@
     },
     {
       "id": "final-boss-p5",
-      "type": "hotspot",
-      "prompt": "Round five. A last consent screen blocks the door out of the Core. It shows a pre-ticked box, a glowing 'Accept all' button, a hidden grey 'Manage settings' link, a fear line reading 'Close this and lose everything', and a plain link to the privacy policy. Tap every dark pattern. Leave the honest privacy-policy link.",
+      "type": "draw-spot",
+      "prompt": "Round five. A last consent screen blocks the door out of the Core. It shows a pre-ticked box, a glowing 'Accept all' button, a hidden grey 'Manage settings' link, a fear line reading 'Close this and lose everything', and a plain link to the privacy policy. Draw a box around every dark pattern. Leave the honest privacy-policy link.",
       "image": "assets/img/puzzle/core-consent.svg",
       "regions": [
         { "id": "preticked", "label": "Pre-ticked box", "x": 20, "y": 24, "w": 120, "h": 34, "correct": true },

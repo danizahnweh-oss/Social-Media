@@ -288,6 +288,24 @@
           const correctIds = puzzle.regions.filter((region) => region.correct).map((region) => region.id);
           return correctIds.every((id) => answer.includes(id)) && answer.length === correctIds.length;
         }
+        case "draw-spot": {
+          const boxes = Array.isArray(answer) ? answer : [];
+          if (!boxes.length) return false;
+          const MAX_AREA = 0.3;
+          const centres = puzzle.regions.map((region) => ({
+            correct: !!region.correct,
+            cx: (region.x + region.w / 2) / 300,
+            cy: (region.y + region.h / 2) / 220
+          }));
+          const correctCentres = centres.filter((c) => c.correct);
+          const covers = (box, c) =>
+            c.cx >= box.x && c.cx <= box.x + box.w && c.cy >= box.y && c.cy <= box.y + box.h;
+          const validBoxes = boxes.filter((box) => box.w * box.h <= MAX_AREA);
+          const foundCount = correctCentres.filter((c) => validBoxes.some((box) => covers(box, c))).length;
+          const required = puzzle.requiredCorrect || correctCentres.length;
+          const noStray = boxes.every((box) => box.w * box.h <= MAX_AREA && correctCentres.some((c) => covers(box, c)));
+          return foundCount >= required && noStray;
+        }
         case "chat-sim":
           return answer === puzzle.decision.correctIndex;
         case "feed-mark": {

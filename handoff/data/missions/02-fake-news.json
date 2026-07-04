@@ -42,8 +42,8 @@
     },
     {
       "id": "fake-news-p2",
-      "type": "hotspot",
-      "prompt": "You zoom into the dramatic crowd photo attached to the story. It looks real - and it is - but a detail in the background gives it away. Click on the suspicious spot that proves this genuine photo is being recycled from an old, unrelated event. (Look for a poster in the background that shows an old year, '2016'.)",
+      "type": "draw-spot",
+      "prompt": "You zoom into the dramatic crowd photo attached to the story. It looks real - and it is - but a detail in the background gives it away. Draw a box around the suspicious spot that proves this genuine photo is being recycled from an old, unrelated event. (Look for a poster in the background that shows an old year, '2016'.)",
       "points": 150,
       "image": "assets/img/puzzle/fake-news-photo-real.png",
       "regions": [

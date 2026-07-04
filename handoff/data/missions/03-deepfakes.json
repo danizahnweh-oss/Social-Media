@@ -19,8 +19,8 @@
   "puzzles": [
     {
       "id": "deepfakes-p1",
-      "type": "hotspot",
-      "prompt": "Vega has frozen the suspect video on one telling frame. Click on every part of the image that gives away AI manipulation. Zoom in on the hand, the ear, the shadows. (The frame shows a person: the raised hand has warped, impossible finger spacing, one ear-edge is blurry and smears into the hair, and the shadow falls the opposite way to everything else. The plain jumper is fine.) Find at least three.",
+      "type": "draw-spot",
+      "prompt": "Vega has frozen the suspect video on one telling frame. Draw a box around every part of the image that gives away AI manipulation. Zoom in on the hand, the ear, the shadows. (The frame shows a person: the raised hand has warped, impossible finger spacing, one ear-edge is blurry and smears into the hair, and the shadow falls the opposite way to everything else. The plain jumper is fine.) Find at least three.",
       "points": 200,
       "image": "assets/img/puzzle/deepfake-frame-real.png",
       "regions": [

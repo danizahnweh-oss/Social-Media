@@ -171,6 +171,98 @@
     return wrap;
   }
 
+  function renderDrawSpot(puzzle, onChange) {
+    const boxes = [];
+    const MIN = 0.04;
+    const outer = el("div", "grid");
+    outer.append(el("p", "helper", "Drag on the image to draw a box around each suspicious spot. Tap a box you drew to remove it."));
+    const wrap = el("div", "hotspot-wrap draw-spot");
+    const img = el("img");
+    img.src = puzzle.image;
+    img.alt = puzzle.prompt;
+    img.draggable = false;
+    const layer = el("div", "draw-layer");
+    wrap.append(img, layer);
+    outer.append(wrap);
+
+    const clamp = (v) => Math.max(0, Math.min(1, v));
+
+    function pointer(event) {
+      const rect = layer.getBoundingClientRect();
+      const src = event.touches && event.touches[0] ? event.touches[0] : event;
+      return { x: clamp((src.clientX - rect.left) / rect.width), y: clamp((src.clientY - rect.top) / rect.height) };
+    }
+
+    function emit() {
+      onChange(boxes.map((b) => ({ x: b.x, y: b.y, w: b.w, h: b.h })));
+    }
+
+    function paint() {
+      layer.querySelectorAll(".drawn-box").forEach((node) => node.remove());
+      boxes.forEach((box, index) => {
+        const node = el("div", "drawn-box");
+        node.style.left = `${box.x * 100}%`;
+        node.style.top = `${box.y * 100}%`;
+        node.style.width = `${box.w * 100}%`;
+        node.style.height = `${box.h * 100}%`;
+        node.title = "Tap to remove";
+        node.addEventListener("pointerdown", (event) => {
+          event.stopPropagation();
+          boxes.splice(index, 1);
+          paint();
+          emit();
+        });
+        layer.append(node);
+      });
+    }
+
+    let start = null;
+    let ghost = null;
+
+    layer.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      start = pointer(event);
+      ghost = el("div", "drawn-box ghost");
+      layer.append(ghost);
+      layer.setPointerCapture(event.pointerId);
+    });
+
+    layer.addEventListener("pointermove", (event) => {
+      if (!start || !ghost) return;
+      const now = pointer(event);
+      const x = Math.min(start.x, now.x);
+      const y = Math.min(start.y, now.y);
+      const w = Math.abs(now.x - start.x);
+      const h = Math.abs(now.y - start.y);
+      ghost.style.left = `${x * 100}%`;
+      ghost.style.top = `${y * 100}%`;
+      ghost.style.width = `${w * 100}%`;
+      ghost.style.height = `${h * 100}%`;
+    });
+
+    function finish(event) {
+      if (!start) return;
+      const now = pointer(event);
+      const x = Math.min(start.x, now.x);
+      const y = Math.min(start.y, now.y);
+      const w = Math.abs(now.x - start.x);
+      const h = Math.abs(now.y - start.y);
+      if (ghost) ghost.remove();
+      ghost = null;
+      start = null;
+      if (w >= MIN && h >= MIN) {
+        boxes.push({ x, y, w, h });
+        paint();
+        emit();
+      }
+    }
+
+    layer.addEventListener("pointerup", finish);
+    layer.addEventListener("pointercancel", finish);
+
+    return outer;
+  }
+
   function renderChatSim(puzzle, onChange) {
     const wrap = el("div", "grid");
     const chat = el("div", "chat-sim");
@@ -254,6 +346,8 @@
           return renderTextInput(puzzle, onChange);
         case "hotspot":
           return renderHotspot(puzzle, onChange);
+        case "draw-spot":
+          return renderDrawSpot(puzzle, onChange);
         case "chat-sim":
           return renderChatSim(puzzle, onChange);
         case "feed-mark":
