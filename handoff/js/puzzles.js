@@ -182,8 +182,31 @@
     img.alt = puzzle.prompt;
     img.draggable = false;
     const layer = el("div", "draw-layer");
-    wrap.append(img, layer);
+    const solutionLayer = el("div", "solution-layer");
+    wrap.append(img, layer, solutionLayer);
     outer.append(wrap);
+
+    let solutionShown = false;
+    const solutionBtn = button("secondary-button small-button", "SHOW SOLUTION");
+    solutionBtn.addEventListener("click", () => {
+      solutionShown = !solutionShown;
+      solutionLayer.innerHTML = "";
+      if (solutionShown) {
+        puzzle.regions
+          .filter((region) => region.correct)
+          .forEach((region) => {
+            const mark = el("div", "solution-box");
+            mark.style.left = `${(region.x / 300) * 100}%`;
+            mark.style.top = `${(region.y / 220) * 100}%`;
+            mark.style.width = `${(region.w / 300) * 100}%`;
+            mark.style.height = `${(region.h / 220) * 100}%`;
+            if (region.label) mark.append(el("span", "solution-label", region.label));
+            solutionLayer.append(mark);
+          });
+      }
+      solutionBtn.textContent = solutionShown ? "HIDE SOLUTION" : "SHOW SOLUTION";
+    });
+    outer.append(solutionBtn);
 
     const clamp = (v) => Math.max(0, Math.min(1, v));
 
