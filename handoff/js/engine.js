@@ -291,19 +291,26 @@
         case "draw-spot": {
           const boxes = Array.isArray(answer) ? answer : [];
           if (!boxes.length) return false;
-          const MAX_AREA = 0.3;
-          const centres = puzzle.regions.map((region) => ({
+          const MAX_AREA = 0.42;
+          const rects = puzzle.regions.map((region) => ({
             correct: !!region.correct,
-            cx: (region.x + region.w / 2) / 300,
-            cy: (region.y + region.h / 2) / 220
+            x: region.x / 300,
+            y: region.y / 220,
+            w: region.w / 300,
+            h: region.h / 220
           }));
-          const correctCentres = centres.filter((c) => c.correct);
-          const covers = (box, c) =>
-            c.cx >= box.x && c.cx <= box.x + box.w && c.cy >= box.y && c.cy <= box.y + box.h;
+          const correctRects = rects.filter((r) => r.correct);
+          // Generous hit test: any overlap between the drawn box and the region counts.
+          const overlaps = (box, r) => {
+            const ix = Math.min(box.x + box.w, r.x + r.w) - Math.max(box.x, r.x);
+            const iy = Math.min(box.y + box.h, r.y + r.h) - Math.max(box.y, r.y);
+            return ix > 0 && iy > 0;
+          };
           const validBoxes = boxes.filter((box) => box.w * box.h <= MAX_AREA);
-          const foundCount = correctCentres.filter((c) => validBoxes.some((box) => covers(box, c))).length;
-          const required = puzzle.requiredCorrect || correctCentres.length;
-          const noStray = boxes.every((box) => box.w * box.h <= MAX_AREA && correctCentres.some((c) => covers(box, c)));
+          const foundCount = correctRects.filter((r) => validBoxes.some((box) => overlaps(box, r))).length;
+          const required = puzzle.requiredCorrect || correctRects.length;
+          // A box is only a "stray" if it is oversized or misses every correct region entirely.
+          const noStray = boxes.every((box) => box.w * box.h <= MAX_AREA && correctRects.some((r) => overlaps(box, r)));
           return foundCount >= required && noStray;
         }
         case "chat-sim":

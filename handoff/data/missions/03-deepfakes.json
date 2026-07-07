@@ -24,11 +24,11 @@
       "points": 200,
       "image": "assets/img/puzzle/deepfake-frame-real.png",
       "regions": [
-        { "id": "hand", "label": "Warped hand with impossible finger spacing", "x": 20, "y": 108, "w": 72, "h": 80, "correct": true },
-        { "id": "ear", "label": "Blurry ear smearing into the hair", "x": 150, "y": 30, "w": 45, "h": 45, "correct": true },
-        { "id": "shadow", "label": "Shadow falling the wrong way", "x": 200, "y": 150, "w": 90, "h": 50, "correct": true },
-        { "id": "jumper", "label": "Plain blue jumper", "x": 90, "y": 100, "w": 60, "h": 60, "correct": false },
-        { "id": "background", "label": "Neutral wall behind the person", "x": 220, "y": 20, "w": 60, "h": 60, "correct": false }
+        { "id": "hand", "label": "Warped hand with impossible finger spacing", "x": 18, "y": 108, "w": 92, "h": 96, "correct": true },
+        { "id": "ear", "label": "Blurry ear smearing into the hair", "x": 98, "y": 44, "w": 44, "h": 56, "correct": true },
+        { "id": "shadow", "label": "Shadow falling the wrong way", "x": 240, "y": 146, "w": 52, "h": 58, "correct": true },
+        { "id": "jumper", "label": "Plain blue jumper", "x": 130, "y": 118, "w": 60, "h": 60, "correct": false },
+        { "id": "background", "label": "Neutral wall behind the person", "x": 210, "y": 20, "w": 60, "h": 55, "correct": false }
       ],
       "requiredCorrect": 3,
       "feedback": {
